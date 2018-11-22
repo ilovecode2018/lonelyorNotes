@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[lonelyor]]></title>
+  <title><![CDATA[lonelyorのblog]]></title>
   <link href="www.lonelyor.org/lonelyorNotes/atom.xml" rel="self"/>
   <link href="www.lonelyor.org/lonelyorNotes/"/>
-  <updated>2018-11-22T14:30:06+08:00</updated>
+  <updated>2018-11-22T14:31:39+08:00</updated>
   <id>www.lonelyor.org/lonelyorNotes/</id>
   <author>
     <name><![CDATA[]]></name>
     
   </author>
-  <generator uri="http://www.mweb.im/">MWeb</generator>
+  <generator uri="http://www.coderforart.com/">CoderForArt</generator>
+
   
   <entry>
     <title type="html"><![CDATA[Web漏洞分类checklist]]></title>
