@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[lonelyorNotes]]></title>
+  <title><![CDATA[lonelyor]]></title>
   <link href="www.lonelyor.org/lonelyorNotes/atom.xml" rel="self"/>
   <link href="www.lonelyor.org/lonelyorNotes/"/>
-  <updated>2018-11-22T14:21:42+08:00</updated>
+  <updated>2018-11-22T14:30:06+08:00</updated>
   <id>www.lonelyor.org/lonelyorNotes/</id>
   <author>
     <name><![CDATA[]]></name>
