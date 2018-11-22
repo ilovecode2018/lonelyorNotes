@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[lonelyorNotes]]></title>
+  <link href="www.lonelyor.org/lonelyorNotes/atom.xml" rel="self"/>
+  <link href="www.lonelyor.org/lonelyorNotes/"/>
+  <updated>2018-11-22T11:58:58+08:00</updated>
+  <id>www.lonelyor.org/lonelyorNotes/</id>
+  <author>
+    <name><![CDATA[]]></name>
+    
+  </author>
+  <generator uri="http://www.mweb.im">MWeb</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[stetest]]></title>
+    <link href="www.lonelyor.org/lonelyorNotes/15428591301433.html"/>
+    <updated>2018-11-22T11:58:50+08:00</updated>
+    <id>www.lonelyor.org/lonelyorNotes/15428591301433.html</id>
+    <content type="html"><![CDATA[
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[test]]></title>
+    <link href="www.lonelyor.org/lonelyorNotes/15428591166544.html"/>
+    <updated>2018-11-22T11:58:36+08:00</updated>
+    <id>www.lonelyor.org/lonelyorNotes/15428591166544.html</id>
+    <content type="html"><![CDATA[
+<p>test</p>
+
+]]></content>
+  </entry>
+  
+</feed>
