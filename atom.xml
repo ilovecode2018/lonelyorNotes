@@ -4,7 +4,7 @@
   <title><![CDATA[lonelyorのblog]]></title>
   <link href="www.lonelyor.org/lonelyorNotes/atom.xml" rel="self"/>
   <link href="www.lonelyor.org/lonelyorNotes/"/>
-  <updated>2018-11-28T11:13:14+08:00</updated>
+  <updated>2018-11-28T11:20:24+08:00</updated>
   <id>www.lonelyor.org/lonelyorNotes/</id>
   <author>
     <name><![CDATA[]]></name>
@@ -257,92 +257,121 @@ date: 2018-09-06 17:42:40
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Web漏洞分类checklist]]></title>
+    <title type="html"><![CDATA[Web安全检测checklist]]></title>
     <link href="www.lonelyor.org/lonelyorNotes/15428591301433.html"/>
     <updated>2018-11-22T11:58:50+08:00</updated>
     <id>www.lonelyor.org/lonelyorNotes/15428591301433.html</id>
     <content type="html"><![CDATA[
-<blockquote>
-<p>写上一个漏洞分类的checklist，方便以后补充漏洞检测方案以及更多相关内容的学习。这里面的内容不是全部，因为后续还会更新，但是更多新的内容会不会更新到博客，就不知道了。</p>
-</blockquote>
+<h2 id="toc_0">x01 爆破</h2>
 
-<h1 id="toc_0">爆破</h1>
+<h3 id="toc_1">弱口令</h3>
 
-<p>系统、网络、应用弱口令<br/>
-网站目录遍历/文件遍历<br/>
+<p>HTTP登录<br/>
+SSH<br/>
+MySQL<br/>
+Telnet</p>
+
+<h3 id="toc_2">遍历</h3>
+
+<p>网站敏感文件<br/>
+    源码<br/>
+    配置文件<br/>
+    备份文件<br/>
+    探针类文件<br/>
+网站敏感目录<br/>
+    物理路径<br/>
+    网站管理后台<br/>
+    上传目录<br/>
+    数据库Web管理入口<br/>
+    现成的Webshell<br/>
 端口扫描<br/>
-用户枚举和可猜测用户名<br/>
-短信/邮箱轰炸<br/>
-短文件名漏洞</p>
+0day扫描<br/>
+子域名</p>
 
-<h1 id="toc_1">不安全配置</h1>
+<h2 id="toc_3">x02 不安全配置</h2>
+
+<h3 id="toc_4">Web服务器</h3>
 
 <p>Nginx<br/>
-HTTP Headers设置不当<br/>
+Apache<br/>
+IIS</p>
+
+<h3 id="toc_5">Web应用服务器</h3>
+
+<p>Tomcat<br/>
+JBoss<br/>
+Weblogic</p>
+
+<h3 id="toc_6">HTTP安全特性</h3>
+
+<p>HTTP Headers<br/>
+HTTP Options<br/>
 rebots.txt<br/>
-错误处理不当<br/>
-flash跨域策略配置不当</p>
+flash跨域策略</p>
 
-<p>安全配置checklist<br/>
-    Web应用服务器<br/>
-    数据库<br/>
-    系统<br/>
-    应用</p>
+<h2 id="toc_7">x03 敏感信息泄露</h2>
 
-<h1 id="toc_2">敏感信息泄露</h1>
+<p>用户敏感信息<br/>
+    手机号<br/>
+    身份证号<br/>
+    社保<br/>
+    银行卡号<br/>
+    家庭住址</p>
 
-<p>个人敏感信息定义<br/>
-应用debug信息泄露<br/>
-应用堆栈信息泄露<br/>
-备份文件/测试页面泄露<br/>
-本地敏感信息泄露（前端保存用户密码/验证码）</p>
+<p>应用敏感信息<br/>
+    debug信息<br/>
+    堆栈报错<br/>
+站点敏感信息<br/>
+    测试页面<br/>
+    备份文件<br/>
+本地敏感信息<br/>
+    前端保存用户密码<br/>
+    前端保存验证码</p>
 
-<h1 id="toc_3">xss跨站脚本</h1>
+<h2 id="toc_8">x04 xss跨站脚本</h2>
 
-<p>反射型<br/>
-存储型<br/>
-dom型<br/>
-xss蠕虫</p>
+<p>反射型xss<br/>
+存储型xss<br/>
+DOM型xss</p>
 
-<h1 id="toc_4">请求伪造</h1>
+<h2 id="toc_9">x05 请求伪造</h2>
 
 <p>csrf跨站请求伪造<br/>
-ssrf服务端请求伪造</p>
+ssrf服务器请求伪造</p>
 
-<h1 id="toc_5">注入</h1>
+<h2 id="toc_10">x06 注入</h2>
 
-<p>SQL注入<br/>
-CRLF注入<br/>
-LDAP注入<br/>
+<p>LDAP注入<br/>
+ORM注入<br/>
 XML注入<br/>
-HTTP参数污染（HPP）<br/>
-HTML注入<br/>
-客户端模板注入（CSTI）<br/>
-服务端模板注入（SSTI）<br/>
-服务器端包含注入（SSI）<br/>
-Python代码注入<br/>
-PHP代码注入<br/>
-反序列化漏洞</p>
+XPath注入<br/>
+IMAP/SMTP注入<br/>
+SQL注入<br/>
+代码注入</p>
 
-<h1 id="toc_6">使用已知漏洞组件</h1>
+<h2 id="toc_11">x07已知漏洞组件</h2>
 
-<p>低版本组件<br/>
-0day<br/>
-经典漏洞（heartbleed/struts2）</p>
+<p>库文件<br/>
+框架<br/>
+模块</p>
 
-<h1 id="toc_7">文件类漏洞</h1>
+<h2 id="toc_12">x08 文件类漏洞</h2>
 
-<p>文件包含<br/>
-任意文件创建/读取/上传/下载/删除</p>
+<p>文件包含漏洞<br/>
+任意文件创建<br/>
+任意文件读取<br/>
+任意文件上传<br/>
+任意文件下载<br/>
+任意文件删除</p>
 
-<h1 id="toc_8">文件解析漏洞</h1>
+<h2 id="toc_13">x09 解析漏洞</h2>
 
 <p>IIS解析漏洞<br/>
 Nginx解析漏洞<br/>
 Apache解析漏洞<br/>
 PHP CGI解析漏洞</p>
 
-<h1 id="toc_9">劫持类漏洞</h1>
+<h2 id="toc_14">x10 劫持类漏洞</h2>
 
 <p>点击劫持<br/>
 Jsonp劫持<br/>
@@ -351,32 +380,51 @@ DNS劫持<br/>
 二维码劫持<br/>
 子域名劫持</p>
 
-<h1 id="toc_10">业务逻辑漏洞</h1>
+<h2 id="toc_15">x11 业务逻辑漏洞</h2>
 
 <p>认证<br/>
+    使用默认凭证<br/>
+    冻结账户策略不当<br/>
+    弱用户名和密码<br/>
+    “记住我”功能<br/>
+    自动登录<br/>
+    单点登录<br/>
+    弱口令<br/>
+    弱安全问题/答案<br/>
+    第三方登录风险<br/>
+    Oauth2.0安全<br/>
+    JWT安全<br/>
+    注册覆盖<br/>
+    未验证的重定向和转发<br/>
+    双因素认证不当<br/>
 授权<br/>
-会话管理</p>
-
-<p>业务逻辑漏洞挖掘的核心是业务<br/>
-对业务越熟悉，成功率越高。</p>
-
-<p>我对业务逻辑漏洞的分类可以从两个角度来分：一、根据漏洞类型分类；二、根据业务场景分类。<br/>
-业务场景举例：<br/>
-    账户体系（登录、注册、改密、销户、双因素认证、上传头像、个人信息等）<br/>
-    验证码（绕过、识别）<br/>
-    优惠活动（优惠券、抽奖、任务、答题、刷赞、定时优惠、新用户优惠等）<br/>
-    内容安全（搜索框、富文本编辑器、上传、反爬虫、社交、隐式接口、资料查询等）<br/>
-    支付相关（0元支付、最大/小金额溢出、负数支付、提现、订单泄露、身份盗用、竞争条件漏洞等）</p>
-
-<h1 id="toc_11">API安全</h1>
-
-<p>认证<br/>
-授权<br/>
+    测试角色定义<br/>
+    权限管理缺失<br/>
+    匿名访问（备用接口——常见于兼容老的不安全的接口时产生）<br/>
+    水平越权<br/>
+    垂直越权<br/>
+    超级账户<br/>
+    实名认证不严格<br/>
 会话管理<br/>
-输入和输出<br/>
-加密</p>
+    cookie安全属性<br/>
+    cookie可猜解<br/>
+    cookie溢出<br/>
+    会话固定<br/>
+    用户凭证不安全传输<br/>
+    用户凭证未一次失效<br/>
+    用户凭证可猜解<br/>
+    注销与会话超时<br/>
+流程绕过<br/>
+    找回密码流程绕过</p>
 
-<p>未完待续...</p>
+<h2 id="toc_16">x12 密码学安全</h2>
+
+<p>弱加密<br/>
+不安全传输</p>
+
+<h2 id="toc_17">x13 API安全</h2>
+
+<p>暂略</p>
 
 ]]></content>
   </entry>
