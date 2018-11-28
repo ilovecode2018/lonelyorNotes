@@ -2,7 +2,17 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
   <loc>www.lonelyor.org/lonelyorNotes/</loc>
-  <lastmod>2018-11-28T11:20:30+08:00</lastmod>
+  <lastmod>2018-11-28T15:28:05+08:00</lastmod>
+</url>
+
+<url>
+  <loc>www.lonelyor.org/lonelyorNotes/15433875205785.html</loc>
+  <lastmod>2018-11-28T14:45:20+08:00</lastmod>
+</url>
+
+<url>
+  <loc>www.lonelyor.org/lonelyorNotes/15433756568203.html</loc>
+  <lastmod>2018-11-28T11:27:36+08:00</lastmod>
 </url>
 
 <url>
@@ -42,6 +52,10 @@
 </url>
 
 <url>
+  <loc>www.lonelyor.org/lonelyorNotes/xss%E8%B7%A8%E7%AB%99%E8%84%9A%E6%9C%AC.html</loc>
+</url>
+
+<url>
   <loc>www.lonelyor.org/lonelyorNotes/%E6%B3%A8%E5%85%A5.html</loc>
 </url>
 
@@ -63,6 +77,14 @@
 
 <url>
   <loc>www.lonelyor.org/lonelyorNotes/Windows%E6%8A%80%E5%B7%A7.html</loc>
+</url>
+
+<url>
+  <loc>www.lonelyor.org/lonelyorNotes/CTF.html</loc>
+</url>
+
+<url>
+  <loc>www.lonelyor.org/lonelyorNotes/ctflearn.html</loc>
 </url>
 
 

@@ -4,13 +4,48 @@
   <title><![CDATA[lonelyorのblog]]></title>
   <link href="www.lonelyor.org/lonelyorNotes/atom.xml" rel="self"/>
   <link href="www.lonelyor.org/lonelyorNotes/"/>
-  <updated>2018-11-28T11:20:24+08:00</updated>
+  <updated>2018-11-28T15:28:02+08:00</updated>
   <id>www.lonelyor.org/lonelyorNotes/</id>
   <author>
     <name><![CDATA[]]></name>
     
   </author>
   <generator uri="http://www.mweb.im/">MWeb</generator>
+  
+  <entry>
+    <title type="html"><![CDATA[BASIC INJECTION 基本注入]]></title>
+    <link href="www.lonelyor.org/lonelyorNotes/15433875205785.html"/>
+    <updated>2018-11-28T14:45:20+08:00</updated>
+    <id>www.lonelyor.org/lonelyorNotes/15433875205785.html</id>
+    <content type="html"><![CDATA[
+<p>题目：<a href="https://ctflearn.com/problems/88">https://ctflearn.com/problems/88</a><br/>
+解：<br/>
+访问题目中提到的：<a href="https://web.ctflearn.com/web4/">域名</a><br/>
+<img src="http://images.lonelyor.org/ctflearn-basic-injection-1.png" alt="ctflearn-basic-injection-1"/><br/>
+然后输入payload，得到以下数据，方框中的即为flag。<br/>
+<img src="http://images.lonelyor.org/ctflearn-basic-injection-2.png" alt="ctflearn-basic-injection-2"/></p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[HttpOnly]]></title>
+    <link href="www.lonelyor.org/lonelyorNotes/15433756568203.html"/>
+    <updated>2018-11-28T11:27:36+08:00</updated>
+    <id>www.lonelyor.org/lonelyorNotes/15433756568203.html</id>
+    <content type="html"><![CDATA[
+<p>HttpOnly是 Set-Cookie HTTP响应头中包含的附加标志。生成cookie时使用httponly标志有助于降低客户端脚本访问受保护cookie的风险。</p>
+
+<p>如果HTTP响应头中包含HttpOnly标志，则无法通过客户端脚本访问cookie。因此即使存在xss跨站脚本漏洞，并且用户意外访问到恶意链接，浏览器也不会向第三方透露cookie（前提是浏览器支持HttpOnly）。</p>
+
+<p>参考链接：</p>
+
+<blockquote>
+<p><a href="https://www.owasp.org/index.php/HttpOnly">https://www.owasp.org/index.php/HttpOnly</a></p>
+</blockquote>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[windows右键添加管理员获得所有权]]></title>
