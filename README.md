@@ -4,7 +4,7 @@
 这里是我的学习笔记，主要以安全技术为主。想要更直观的访问文章可以访问我的博客。    
 博客通过 http://www.lonelyor.org/ 或 https://alshelley.github.io/ 访问      
 笔记主页如下：    
-http://www.lonelyor.org/lonelyorNotes/    
+http://www.lonelyor.org/lonelyorNotes/index.html    
 
 
 博客网站含有三个子页    
