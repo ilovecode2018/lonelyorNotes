@@ -4,7 +4,7 @@
   <title><![CDATA[lonelyorのblog]]></title>
   <link href="www.lonelyor.org/lonelyorNotes/atom.xml" rel="self"/>
   <link href="www.lonelyor.org/lonelyorNotes/"/>
-  <updated>2018-12-13T17:10:01+08:00</updated>
+  <updated>2018-12-13T17:10:05+08:00</updated>
   <id>www.lonelyor.org/lonelyorNotes/</id>
   <author>
     <name><![CDATA[]]></name>
@@ -22,33 +22,20 @@
 <p>文章写于2017年7月6日，很久之前的东西了。</p>
 </blockquote>
 
-<p>title: 从零开始的DVWA之环境搭建<br/>
-author: lonelyor<br/>
-author_id: defaultAuthorId<br/>
-language: zh-CN<br/>
-tags:<br/>
-  - DVWA<br/>
-  - 环境搭建<br/>
-  - 渗透测试<br/>
-categories:<br/>
-  - DVWA</p>
-
-<h2 id="toc_0">date: 2017-07-06 20:05:00</h2>
-
-<h2 id="toc_1">0X01 主机配置</h2>
+<h2 id="toc_0">0X01 主机配置</h2>
 
 <p>　　操作系统：Ubuntu-Kylin-16.04-LTS_x64（VritualBox虚拟机）<br/><br/>
 　　相关组件：XAMPP+DVWA    </p>
 
-<h2 id="toc_2">0X02 DVWA简介</h2>
+<h2 id="toc_1">0X02 DVWA简介</h2>
 
 <p>　　DVWA是一个用来进行安全脆弱性鉴定（练习挖洞）的PHP/MySQL应用。旨在帮助安全爱好者（黑客白客红客白帽子黑帽子绿帽子等）测试自己的专业技能和工具提供合法的环境（不要瞎搞别人网站，这样不好...），提升技术能力的同时更好的维护比特世界的和平。       </p>
 
-<h2 id="toc_3">0X03 XAMPP简介</h2>
+<h2 id="toc_2">0X03 XAMPP简介</h2>
 
 <p>　　XAMPP（Apache+MySQL+PHP+PERL）是一个功能强大的建站集成软件包。这个软件包原来的名字是 LAMPP，但是为了避免误解，最新的几个版本就改名为 XAMPP 了。由于DWVA需要PHP环境，嗯，就由XAMMP来守护了。    </p>
 
-<h2 id="toc_4">0X04 XAMPP和DVWA安装</h2>
+<h2 id="toc_3">0X04 XAMPP和DVWA安装</h2>
 
 <p>　　首先访问官网 <a href="https://www.apachefriends.org/zh_cn/download.html">https://www.apachefriends.org/zh_cn/download.html</a> 然后点击下载：<br/><br/>
 <img src="media/15446897185202/1.png" alt="1"/></p>
