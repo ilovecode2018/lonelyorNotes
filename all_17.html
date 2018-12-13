@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
     
-  CTF - lonelyorのblog
+  lonelyorのblog
   
   </title>
   
@@ -113,66 +113,44 @@
 		<div class="markdown-body home-categories">
 		
 			<div class="article">
-                <a class="clearlink" href="15446861280668.html">
+                <a class="clearlink" href="15428715286450.html">
                 
-                  <h1>hackthebox邀请码</h1>
+                  <h1>windows右键添加管理员获得所有权</h1>
                   <div class="a-content">
                       
                       <div class="a-content-text">
                         
                         	<blockquote>
-<p>不打算好好玩的麻烦不要瞎注册，大量的垃圾账号只会污染整个生态环境。</p>
+<p>右键添加获得管理员所有权是个比较方便的功能。</p>
 </blockquote>
 
-<p>进入注册页面，观察页面js文件会找到以下内容：</p>
+<p>打开记事本或者别的文本编辑器，然后写入如下内容:</p>
 
-<pre class="line-numbers"><code class="language-javascript">eval(function(p,a,c,k,e,d){e=function(c){return c.toString(36)};if(!&#39;&#39;.replace(/^/,String)){while(c--){d[c.toString(a)]=k[c]||c.toString(a)}k=[function(e){return d[e]}];e=function(){return&#39;\\w+&#39;};c=1};while(c--){if(k[c]){p=p.replace(new RegExp(&#39;\\b&#39;+e(c)+&#39;\\b&#39;,&#39;g&#39;),k[c])}}return p}(&#39;1 i(4){h 8={&quot;4&quot;:4};$.9({a:&quot;7&quot;,5:&quot;6&quot;,g:8,b:\&#39;/d/e/n\&#39;,c:1(0){3.2(0)},f:1(0){3.2(0)}})}1 j(){$.9({a:&quot;7&quot;,5:&quot;6&quot;,b:\&#39;/d/e/k/l/m\&#39;,c:1(0){3.2(0)},f:1(0){3.2(0)}})}&#39;,24,24,&#39;response|function|log|console|code|dataType|json|POST|formData|ajax|type|url|success|api|invite|error|data|var|verifyInviteCode|makeInviteCode|how|to|generate|verify&#39;.split(&#39;|&#39;),0,{}))
+<pre class="line-numbers"><code class="language-cmd">Windows Registry Editor Version 5.00
+
+[HKEY_CLASSES_ROOT\*\shell\runas]
+@=&quot;管理员取得所有权&quot;
+&quot;NoWorkingDirectory&quot;=&quot;&quot;
+[HKEY_CLASSES_ROOT\*\shell\runas\command]
+@=&quot;cmd.exe /c takeown /f \&quot;%1\&quot; &amp;&amp; icacls \&quot;%1\&quot; /grant administrators:F&quot;
+&quot;IsolatedCommand&quot;=&quot;cmd.exe /c takeown /f \&quot;%1\&quot; &amp;&amp; icacls \&quot;%1\&quot; /grant administrators:F&quot;
+[HKEY_CLASSES_ROOT\exefile\shell\runas2]
+@=&quot;管理员取得所有权&quot;
+&quot;NoWorkingDirectory&quot;=&quot;&quot;
+[HKEY_CLASSES_ROOT\exefile\shell\runas2\command]
+@=&quot;cmd.exe /c takeown /f \&quot;%1\&quot; &amp;&amp; icacls \&quot;%1\&quot; /grant administrators:F&quot;
+&quot;IsolatedCommand&quot;=&quot;cmd.exe /c takeown /f \&quot;%1\&quot; &amp;&amp; icacls \&quot;%1\&quot; /grant administrators:F&quot;
+[HKEY_CLASSES_ROOT\Directory\shell\runas]
+@=&quot;管理员取得所有权&quot;
+&quot;NoWorkingDirectory&quot;=&quot;&quot;
+[HKEY_CLASSES_ROOT\Directory\shell\runas\command]
+@=&quot;cmd.exe /c takeown /f \&quot;%1\&quot; /r /d y &amp;&amp; icacls \&quot;%1\&quot; /grant administrators:F /t&quot;
+&quot;IsolatedCommand&quot;=&quot;cmd.exe /c takeown /f \&quot;%1\&quot; /r /d y &amp;&amp; icacls \&quot;%1\&quot; /grant administrators:F /t&quot;
 </code></pre>
 
-<p>1、然后把这段代码放到 <a href="http://jsbeautifier.org/">http://jsbeautifier.org/</a> 进行美化，得出：<br/>
-2、</p>
-
-<pre class="line-numbers"><code class="language-javascript">function verifyInviteCode(code) {
-    var formData = {
-        &quot;code&quot;: code
-    };
-    $.ajax({
-        type: &quot;POST&quot;,
-        dataType: &quot;json&quot;,
-        data: formData,
-        url: &#39;/api/invite/verify&#39;,
-        success: function(response) {
-            console.log(response)
-        },
-        error: function(response) {
-            console.log(response)
-        }
-    })
-}
-
-function makeInviteCode() {
-    $.ajax({
-        type: &quot;POST&quot;,
-        dataType: &quot;json&quot;,
-        url: &#39;/api/invite/how/to/generate&#39;,
-        success: function(response) {
-            console.log(response)
-        },
-        error: function(response) {
-            console.log(response)
-        }
-    })
-}
-</code></pre>
-
-<p>可以看出上述代码是让我们访问：<a href="https://www.hackthebox.eu/api/invite/generate">https://www.hackthebox.eu/api/invite/generate</a><br/>
-然后修改请求方式为post<br/>
-于是就得到了：</p>
-
-<pre class="line-numbers"><code class="language-javascript">{&quot;success&quot;:1,&quot;data&quot;:{&quot;code&quot;:&quot;VlJQS1QtQUNXRUstT0tYREwtQ0lZQVUtS0NZSlU=&quot;,&quot;format&quot;:&quot;encoded&quot;},&quot;0&quot;:200}
-</code></pre>
-
-<p>将code进行base64解码，就得到了邀请码。</p>
+<p>然后另存为：管理员获得所有权.reg<br/>
+文件名可以随便写，但是后缀记得写成reg（改成这个后缀后文件图标就会变成一个破碎蓝色魔方）。<br/>
+然后右键以管理员身份运行，若弹框注册表xxx的，同意就行了。</p>
 
                         
                       </div>
@@ -181,10 +159,10 @@ function makeInviteCode() {
                 <div class="read-more clearfix">
                   <div class="more-left left">
                   
-                    <span class="date">2018/12/13 15:28 下午</span>
+                    <span class="date">2018/11/22 15:25 下午</span>
                     <span>posted in&nbsp;</span> 
           				  
-          					    <span class="posted-in"><a href='CTF.html'>CTF</a></span>
+          					    <span class="posted-in"><a href='Windows%E6%8A%80%E5%B7%A7.html'>Windows技巧</a></span>
           				   
                   </div>
                   <div class="more-right right">
@@ -203,12 +181,12 @@ function makeInviteCode() {
 			<div class="row">
 			  <div class="large-6 columns">
 			  <p class="text-left" style="padding-top:25px;">
-			   
+			   <a href="all_16.html">&laquo; Prev Page</a>  
 			  </p>
 			  </div>
 			  <div class="large-6 columns">
 			<p class="text-right" style="padding-top:25px;">
-			 <a href="CTF_1.html">&raquo; Next Page</a> 
+			 <a href="all_18.html">&raquo; Next Page</a> 
 			</p>
 			  </div>
 			</div>

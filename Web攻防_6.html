@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
     
-  CTF - lonelyorのblog
+  Web攻防 - lonelyorのblog
   
   </title>
   
@@ -113,66 +113,18 @@
 		<div class="markdown-body home-categories">
 		
 			<div class="article">
-                <a class="clearlink" href="15446861280668.html">
+                <a class="clearlink" href="15446875268619.html">
                 
-                  <h1>hackthebox邀请码</h1>
+                  <h1>异常登录检测</h1>
                   <div class="a-content">
                       
                       <div class="a-content-text">
                         
-                        	<blockquote>
-<p>不打算好好玩的麻烦不要瞎注册，大量的垃圾账号只会污染整个生态环境。</p>
-</blockquote>
-
-<p>进入注册页面，观察页面js文件会找到以下内容：</p>
-
-<pre class="line-numbers"><code class="language-javascript">eval(function(p,a,c,k,e,d){e=function(c){return c.toString(36)};if(!&#39;&#39;.replace(/^/,String)){while(c--){d[c.toString(a)]=k[c]||c.toString(a)}k=[function(e){return d[e]}];e=function(){return&#39;\\w+&#39;};c=1};while(c--){if(k[c]){p=p.replace(new RegExp(&#39;\\b&#39;+e(c)+&#39;\\b&#39;,&#39;g&#39;),k[c])}}return p}(&#39;1 i(4){h 8={&quot;4&quot;:4};$.9({a:&quot;7&quot;,5:&quot;6&quot;,g:8,b:\&#39;/d/e/n\&#39;,c:1(0){3.2(0)},f:1(0){3.2(0)}})}1 j(){$.9({a:&quot;7&quot;,5:&quot;6&quot;,b:\&#39;/d/e/k/l/m\&#39;,c:1(0){3.2(0)},f:1(0){3.2(0)}})}&#39;,24,24,&#39;response|function|log|console|code|dataType|json|POST|formData|ajax|type|url|success|api|invite|error|data|var|verifyInviteCode|makeInviteCode|how|to|generate|verify&#39;.split(&#39;|&#39;),0,{}))
-</code></pre>
-
-<p>1、然后把这段代码放到 <a href="http://jsbeautifier.org/">http://jsbeautifier.org/</a> 进行美化，得出：<br/>
-2、</p>
-
-<pre class="line-numbers"><code class="language-javascript">function verifyInviteCode(code) {
-    var formData = {
-        &quot;code&quot;: code
-    };
-    $.ajax({
-        type: &quot;POST&quot;,
-        dataType: &quot;json&quot;,
-        data: formData,
-        url: &#39;/api/invite/verify&#39;,
-        success: function(response) {
-            console.log(response)
-        },
-        error: function(response) {
-            console.log(response)
-        }
-    })
-}
-
-function makeInviteCode() {
-    $.ajax({
-        type: &quot;POST&quot;,
-        dataType: &quot;json&quot;,
-        url: &#39;/api/invite/how/to/generate&#39;,
-        success: function(response) {
-            console.log(response)
-        },
-        error: function(response) {
-            console.log(response)
-        }
-    })
-}
-</code></pre>
-
-<p>可以看出上述代码是让我们访问：<a href="https://www.hackthebox.eu/api/invite/generate">https://www.hackthebox.eu/api/invite/generate</a><br/>
-然后修改请求方式为post<br/>
-于是就得到了：</p>
-
-<pre class="line-numbers"><code class="language-javascript">{&quot;success&quot;:1,&quot;data&quot;:{&quot;code&quot;:&quot;VlJQS1QtQUNXRUstT0tYREwtQ0lZQVUtS0NZSlU=&quot;,&quot;format&quot;:&quot;encoded&quot;},&quot;0&quot;:200}
-</code></pre>
-
-<p>将code进行base64解码，就得到了邀请码。</p>
+                        	<p>异常登录功能用来检测服务器上的登录行为。<br/>
+非常用地的登录行为告警（这个常用登陆地可以作为个人信息的一部分来由用户设置；或者收集第一次成功登录时的公网ip，然后将此ip地址设置位常用登陆地，从该时间往后顺延24小时内的所有公网登录地也会被记为常用登陆地，当超过24小时候，所有不在常用登陆地的登录行为均视为异地登录警告。当某个ip被判定为异地登录时，仅第一次登录行为进行告警，如果成功登录6次或以上，则默认将此ip的地点记录为常用登录地。）<br/>
+非常用登录ip告警<br/>
+非常用登录时间告警<br/>
+非常用登录账号告警（同一时间段内超多次登录同一账号、同一时间段内不同地理位置登录账号、同一时间段内多个ip登录同一账号、不同设备登录同一账号、同一设备不同ip登录同一账号）</p>
 
                         
                       </div>
@@ -181,10 +133,10 @@ function makeInviteCode() {
                 <div class="read-more clearfix">
                   <div class="more-left left">
                   
-                    <span class="date">2018/12/13 15:28 下午</span>
+                    <span class="date">2018/12/13 15:52 下午</span>
                     <span>posted in&nbsp;</span> 
           				  
-          					    <span class="posted-in"><a href='CTF.html'>CTF</a></span>
+          					    <span class="posted-in"><a href='%E4%B8%9A%E5%8A%A1%E5%AE%89%E5%85%A8.html'>业务安全</a></span>
           				   
                   </div>
                   <div class="more-right right">
@@ -203,12 +155,12 @@ function makeInviteCode() {
 			<div class="row">
 			  <div class="large-6 columns">
 			  <p class="text-left" style="padding-top:25px;">
-			   
+			   <a href="Web攻防_5.html">&laquo; Prev Page</a>  
 			  </p>
 			  </div>
 			  <div class="large-6 columns">
 			<p class="text-right" style="padding-top:25px;">
-			 <a href="CTF_1.html">&raquo; Next Page</a> 
+			 <a href="Web攻防_7.html">&raquo; Next Page</a> 
 			</p>
 			  </div>
 			</div>
