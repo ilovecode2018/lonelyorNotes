@@ -4,13 +4,50 @@
   <title><![CDATA[lonelyorのblog]]></title>
   <link href="www.lonelyor.org/lonelyorNotes/atom.xml" rel="self"/>
   <link href="www.lonelyor.org/lonelyorNotes/"/>
-  <updated>2018-11-28T15:32:11+08:00</updated>
+  <updated>2018-12-13T15:26:47+08:00</updated>
   <id>www.lonelyor.org/lonelyorNotes/</id>
   <author>
     <name><![CDATA[]]></name>
     
   </author>
   <generator uri="http://www.mweb.im/">MWeb</generator>
+  
+  <entry>
+    <title type="html"><![CDATA[burpsuite设置上游代理]]></title>
+    <link href="www.lonelyor.org/lonelyorNotes/15446858089976.html"/>
+    <updated>2018-12-13T15:23:28+08:00</updated>
+    <id>www.lonelyor.org/lonelyorNotes/15446858089976.html</id>
+    <content type="html"><![CDATA[
+<p><img src="media/15446858089976/burp%E8%AE%BE%E7%BD%AE%E4%B8%8A%E6%B8%B8%E4%BB%A3%E7%90%8620180823161146.png" alt="burp设置上游代理20180823161146"/></p>
+
+<p>1、在浏览器中设置burp代理以保证可以抓包<br/>
+2、开启上游代理<br/>
+3、在burp的图中所示位置设置上游代理</p>
+
+<p>打完收工</p>
+
+<h2 id="toc_0">参考链接</h2>
+
+<p><a href="http://www.360zhijia.com/360anquanke/191737.html">http://www.360zhijia.com/360anquanke/191737.html</a></p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[FOEENSICS 101]]></title>
+    <link href="www.lonelyor.org/lonelyorNotes/15433912730163.html"/>
+    <updated>2018-11-28T15:47:53+08:00</updated>
+    <id>www.lonelyor.org/lonelyorNotes/15433912730163.html</id>
+    <content type="html"><![CDATA[
+<p>题目：<a href="https://ctflearn.com/problems/96">https://ctflearn.com/problems/96</a><br/>
+<img src="http://images.lonelyor.org/ctflearn-96-1.png" alt="ctflearn-96-1"/><br/>
+访问域名，然后会下载一张图片。<br/>
+接下来我们使用十六进制编码器打开这张图片，会发现：<br/>
+<img src="http://images.lonelyor.org/ctflearn-96-2.png" alt="ctflearn-96-2"/><br/>
+标红部分即是flag。</p>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[BASIC INJECTION 基本注入]]></title>
