@@ -4,7 +4,7 @@
   <title><![CDATA[lonelyorのblog]]></title>
   <link href="www.lonelyor.org/lonelyorNotes/atom.xml" rel="self"/>
   <link href="www.lonelyor.org/lonelyorNotes/"/>
-  <updated>2018-12-13T17:10:50+08:00</updated>
+  <updated>2018-12-13T17:41:32+08:00</updated>
   <id>www.lonelyor.org/lonelyorNotes/</id>
   <author>
     <name><![CDATA[]]></name>
@@ -93,7 +93,7 @@
 <img src="media/15446897185202/15.png" alt="15"/></p>
 
 <p>然后修改/opt/lamp/etc/php.ini<br/><br/>
-<img src="assets/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84DVWA%E4%B9%8B%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/16.png" alt="16"/>     <img src="media/15446897185202/16.png" alt="16"/></p>
+<img src="media/15446897185202/16.png" alt="16"/></p>
 
 <p>2、解决reCAPTCHA key，配置文件里面有个谷歌连接，点进去剩下的估计你也看得懂应该知道该怎么做额。<br/><br/>
 <img src="media/15446897185202/17.png" alt="17"/></p>
@@ -101,19 +101,19 @@
 <p><img src="media/15446897185202/18.png" alt="18"/></p>
 
 <p>3、解决最后的两个NO<br/><br/>
-<img src="assets/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84DVWA%E4%B9%8B%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/19.png" alt="19"/>     <img src="media/15446897185202/19.png" alt="19"/></p>
+<img src="media/15446897185202/19.png" alt="19"/></p>
 
 <p>我们给这两个文件加权，运行命令：<br/><br/>
 <img src="media/15446897185202/20.png" alt="20"/></p>
 
 <p>然后点击<br/><br/>
-<img src="assets/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84DVWA%E4%B9%8B%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/21.png" alt="21"/>    <img src="media/15446897185202/21.png" alt="21"/></p>
+<img src="media/15446897185202/21.png" alt="21"/></p>
 
 <p>纳尼!?<br/><br/>
-<img src="assets/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84DVWA%E4%B9%8B%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/22.png" alt="22"/>     <img src="media/15446897185202/22.png" alt="22"/></p>
+<img src="media/15446897185202/22.png" alt="22"/></p>
 
 <p>只好回头再看看XAMPP的数据库配置文件，你会发现他的password默认是被注释了，我们取消注释。<br/><br/>
-<img src="assets/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84DVWA%E4%B9%8B%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/23.png" alt="23"/>      <img src="media/15446897185202/23.png" alt="23"/></p>
+<img src="media/15446897185202/23.png" alt="23"/></p>
 
 <p>最后你会发现不管怎么搞还是报错……这就尴尬了……<br/>
 经过尝试，我发现以下配置可以进入登录界面。<br/>
@@ -128,7 +128,7 @@ XAMPP配置如下：<br/><br/>
 
 <p>接着你就能进入登录界面了。恭喜！<br/>
 http://localhost/DVWA-master/login.php<br/><br/>
-<img src="assets/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84DVWA%E4%B9%8B%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/27.png" alt="27"/>    <img src="media/15446897185202/27.png" alt="27"/></p>
+<img src="media/15446897185202/27.png" alt="27"/></p>
 
 <p>输入账号密码然后登录就能愉快的玩耍了。<br/><br/>
 <img src="media/15446897185202/28.png" alt="28"/></p>
