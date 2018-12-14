@@ -91,6 +91,8 @@
             <li><a href="CTF.html">CTF</a></li>
         
             <li><a href="%E8%99%9A%E6%8B%9F%E5%AE%9E%E9%AA%8C%E5%AE%A4.html">虚拟实验室</a></li>
+        
+            <li><a href="%E6%B5%8F%E8%A7%88%E5%99%A8.html">浏览器</a></li>
          
 
       </ul>
@@ -113,28 +115,66 @@
 		<div class="markdown-body home-categories">
 		
 			<div class="article">
-                <a class="clearlink" href="15428711597348.html">
+                <a class="clearlink" href="15446861280668.html">
                 
-                  <h1>burpsuite设置上游代理</h1>
+                  <h1>hackthebox邀请码</h1>
                   <div class="a-content">
                       
                       <div class="a-content-text">
                         
                         	<blockquote>
-<p>burpsuite的使用技巧之一，设置上游代理。比如测试境外网站时可能需要[fanqiang]才能访问，此时这个技巧就能用得上了。</p>
+<p>不打算好好玩的麻烦不要瞎注册，大量的垃圾账号只会污染整个生态环境。</p>
 </blockquote>
 
-<p><img src="http://images.lonelyor.org/burp%E8%AE%BE%E7%BD%AE%E4%B8%8A%E6%B8%B8%E4%BB%A3%E7%90%8620180823161146.png" alt="burp设置上游代理20180823161146"/></p>
+<p>进入注册页面，观察页面js文件会找到以下内容：</p>
 
-<p>1、在浏览器中设置burp代理以保证可以抓包<br/>
-2、开启上游代理<br/>
-3、在burp的图中所示位置设置上游代理</p>
+<pre class="line-numbers"><code class="language-javascript">eval(function(p,a,c,k,e,d){e=function(c){return c.toString(36)};if(!&#39;&#39;.replace(/^/,String)){while(c--){d[c.toString(a)]=k[c]||c.toString(a)}k=[function(e){return d[e]}];e=function(){return&#39;\\w+&#39;};c=1};while(c--){if(k[c]){p=p.replace(new RegExp(&#39;\\b&#39;+e(c)+&#39;\\b&#39;,&#39;g&#39;),k[c])}}return p}(&#39;1 i(4){h 8={&quot;4&quot;:4};$.9({a:&quot;7&quot;,5:&quot;6&quot;,g:8,b:\&#39;/d/e/n\&#39;,c:1(0){3.2(0)},f:1(0){3.2(0)}})}1 j(){$.9({a:&quot;7&quot;,5:&quot;6&quot;,b:\&#39;/d/e/k/l/m\&#39;,c:1(0){3.2(0)},f:1(0){3.2(0)}})}&#39;,24,24,&#39;response|function|log|console|code|dataType|json|POST|formData|ajax|type|url|success|api|invite|error|data|var|verifyInviteCode|makeInviteCode|how|to|generate|verify&#39;.split(&#39;|&#39;),0,{}))
+</code></pre>
 
-<p>打完收工</p>
+<p>1、然后把这段代码放到 <a href="http://jsbeautifier.org/">http://jsbeautifier.org/</a> 进行美化，得出：<br/>
+2、</p>
 
-<h2 id="toc_0">参考链接</h2>
+<pre class="line-numbers"><code class="language-javascript">function verifyInviteCode(code) {
+    var formData = {
+        &quot;code&quot;: code
+    };
+    $.ajax({
+        type: &quot;POST&quot;,
+        dataType: &quot;json&quot;,
+        data: formData,
+        url: &#39;/api/invite/verify&#39;,
+        success: function(response) {
+            console.log(response)
+        },
+        error: function(response) {
+            console.log(response)
+        }
+    })
+}
 
-<p><a href="http://www.360zhijia.com/360anquanke/191737.html">http://www.360zhijia.com/360anquanke/191737.html</a></p>
+function makeInviteCode() {
+    $.ajax({
+        type: &quot;POST&quot;,
+        dataType: &quot;json&quot;,
+        url: &#39;/api/invite/how/to/generate&#39;,
+        success: function(response) {
+            console.log(response)
+        },
+        error: function(response) {
+            console.log(response)
+        }
+    })
+}
+</code></pre>
+
+<p>可以看出上述代码是让我们访问：<a href="https://www.hackthebox.eu/api/invite/generate">https://www.hackthebox.eu/api/invite/generate</a><br/>
+然后修改请求方式为post<br/>
+于是就得到了：</p>
+
+<pre class="line-numbers"><code class="language-javascript">{&quot;success&quot;:1,&quot;data&quot;:{&quot;code&quot;:&quot;VlJQS1QtQUNXRUstT0tYREwtQ0lZQVUtS0NZSlU=&quot;,&quot;format&quot;:&quot;encoded&quot;},&quot;0&quot;:200}
+</code></pre>
+
+<p>将code进行base64解码，就得到了邀请码。</p>
 
                         
                       </div>
@@ -143,10 +183,10 @@
                 <div class="read-more clearfix">
                   <div class="more-left left">
                   
-                    <span class="date">2018/11/22 15:19 下午</span>
+                    <span class="date">2018/12/13 15:28 下午</span>
                     <span>posted in&nbsp;</span> 
           				  
-          					    <span class="posted-in"><a href='%E5%B7%A5%E5%85%B7.html'>工具</a></span>
+          					    <span class="posted-in"><a href='CTF.html'>CTF</a></span>
           				   
                   </div>
                   <div class="more-right right">
@@ -223,6 +263,8 @@
             <a href="CTF.html"><strong>CTF</strong></a>
         
             <a href="%E8%99%9A%E6%8B%9F%E5%AE%9E%E9%AA%8C%E5%AE%A4.html"><strong>虚拟实验室</strong></a>
+        
+            <a href="%E6%B5%8F%E8%A7%88%E5%99%A8.html"><strong>浏览器</strong></a>
          
         </p>
 
@@ -239,31 +281,31 @@
 	      
 		      
 			      <li class="post">
-			        <a href="15446897185202.html">从零开始的DVWA之环境搭建</a>
+			        <a href="15447676167973.html">我是如何从Google窃取你的照片的 - 我的3个Google漏洞赏金报告分享</a>
 			      </li>
 		     
 		  
 		      
 			      <li class="post">
-			        <a href="15446893463166.html">xss常用payload</a>
+			        <a href="15446978130922.html">enigmagroup入门挑战-基础1</a>
 			      </li>
 		     
 		  
 		      
 			      <li class="post">
-			        <a href="15446892905759.html">同源策略</a>
+			        <a href="15446974404003.html">wsgidav独立服务器使用手册</a>
 			      </li>
 		     
 		  
 		      
 			      <li class="post">
-			        <a href="15446891028198.html">xss测试备忘录</a>
+			        <a href="15446973583267.html">解决npm更新或安装软件时下载较慢等问题</a>
 			      </li>
 		     
 		  
 		      
 			      <li class="post">
-			        <a href="15446890453437.html">xss基础</a>
+			        <a href="15446972266900.html">汉化firefox火狐浏览器</a>
 			      </li>
 		     
 		  

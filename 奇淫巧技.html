@@ -91,6 +91,8 @@
             <li><a href="CTF.html">CTF</a></li>
         
             <li><a href="%E8%99%9A%E6%8B%9F%E5%AE%9E%E9%AA%8C%E5%AE%A4.html">虚拟实验室</a></li>
+        
+            <li><a href="%E6%B5%8F%E8%A7%88%E5%99%A8.html">浏览器</a></li>
          
 
       </ul>
@@ -113,174 +115,372 @@
 		<div class="markdown-body home-categories">
 		
 			<div class="article">
-                <a class="clearlink" href="15446869314706.html">
+                <a class="clearlink" href="15446974404003.html">
                 
-                  <h1>xss、csrf、sql注入快速检测方法</h1>
+                  <h1>wsgidav独立服务器使用手册</h1>
                   <div class="a-content">
                       
                       <div class="a-content-text">
                         
-                        	<h2 id="toc_0">CSRF跨站请求伪造</h2>
+                        	<blockquote>
+<p>很久以前写的，我也不记得写的什么东西了。wsgidav是一个提供webdav服务的python库，可以用来共享文件。更多相关知识可以自行百度“什么是webdav？”。</p>
+</blockquote>
 
-<ul>
-<li>原理<br/>
-攻击者在受害者不知情的情况下，以受害者的名义伪造请求发送给受攻击的站点，从而在未授权的情况下执行在权限保护之下的操作。<br/>
-CSRF攻击的对象是那些可以直接产生数据改变的服务，而对于读取数据的服务，则不需要进行 CSRF 的保护。<br/></li>
-</ul>
+<h1 id="toc_0">使用示例（或者说是个本地测试）</h1>
 
-<hr/>
+<p>sudo wsgidav --host=0.0.0.0 --port=80 --root=/home/lonelyor<br/>
+这里的sudo是个坑，不加的话就找不到wsgidav指令，为此搞了好久诶。</p>
 
-<ul>
-<li>检测方法<br/>
-1.查看重要操作接口提交的请求中是否包含 csrf_token<br/>
-2.更改和删除 csrf_token 后提交表单，查看请求是否能被正确响应。<br/></li>
-</ul>
+<h1 id="toc_1">wsgidav高级设置：</h1>
 
-<hr/>
+<p>sudo wsgidav  --config=./wsgidav.conf<br/>
+引用配置文件，配置文件使用python语法来指定这些选项：<br/>
+服务器选项（主机名，端口，SSL证书，...）<br/>
+共享名称/ WebDAV提供程序映射列表<br/>
+认证用户列表<br/>
+可选的自定义DAV提供程序（即FilesystemProvider以外）<br/>
+可选的自定义锁管理器，属性管理器和域控制器<br/>
+高级调试选项<br/>
+（和更多）</p>
 
-<ul>
-<li>修复方案<br/>
-1.对涉及数据<strong>增、删、改</strong>操作提交的表单中添加csrf_token，token 参数应校验一次后失效。<br/>
-2.最好是在容器或框架上<strong>全局</strong>启用 csrf_token。(很多框架自带的解决办法容易遗漏一次失效的问题)<br/>
-3.token 应有一定的<strong>时效性</strong>，建议为30分钟，过期需失效（即：单页面停留30分钟后，用户提交请求需提示“页面过期，请刷新页面后再次提交”）<br/></li>
-</ul>
+<h1 id="toc_2">配置文件示例</h1>
 
-<hr/>
+<pre class="line-numbers"><code class="language-python">＃注意：这个文件是Python的语法和格式
 
-<ul>
-<li>参考<br/>
-<a href="https://www.owasp.org/index.php/Testing_for_CSRF_(OTG-SESS-005)">CSRF测试</a><br/>
-<a href="https://www.owasp.org/index.php/Cross-Site_Request_Forgery_(CSRF)">跨站请求伪造（CSRF）</a><br/>
-<a href="https://www.ibm.com/developerworks/cn/web/1102_niugang_csrf/">CSRF 攻击的应对之道</a><br/>
-## XSS跨站脚本攻击<br/>
-### 反射型</li>
-<li>原理<br/></li>
-</ul>
+####################################### #########################################＃
+WsgiDAV配置文件
+＃请参阅
+＃http ： //wsgidav.readthedocs.io/en/latest/run-configure.html＃
+以获取配置文件格式的一些解释。
+################################################## ############################## 
 
-<hr/>
+＃助手-请不要修改此节
 
-<ul>
-<li>检测方法<br/>
-<strong>检测场景</strong>：任何有输入输出地方......<br/>
-1.使用通用的web扫描器一般的都能发掘潜在的反射型XSS漏洞。<br/>
-2.手工在一些输入框中或者post参数中加入拼凑过的JS代码，根据返回的页面源码中是否成功嵌入JS代码来判断XSS是否存在。<br/>
-3.如果注入的代码经过后端处理后，永久性的嵌入到了页面当中，则该XSS为存储型的，反射型的XSS一般依赖于该次请求，且同时只能被用户自己所看到。<br/></li>
-</ul>
+provider_mapping  =  {} 
+user_mapping  =  {} 
 
-<hr/>
+高清 addShare （SHARENAME ， davProvider ）：
+    provider_mapping [ shareName ]  =  davProvider
 
-<ul>
-<li>修复方案<br/>
-1.输出时统一使用 htmlEscape（）转义用户输入的数据，将html、js中涉及到的关键字符进行html编码处理后再输出到页面上。<br/>
-2.如果存在用户编写文章等类似用户可以自定义页面样式的功能，则限制用户输入，采用严格的白名单来过滤用户的输入，这种过滤应在后端应实现。(很多开源的第三方富文本编辑器，部分编辑器仅在JS端进行过滤，而不在后端进行关键字过滤)。<br/></li>
-</ul>
+    
+def  addUser （realmName ， user ， password ， description ， roles = []）：
+    realmName  =  “/”  +  realmName 。条（- [R “\ /” ）
+    的UserDict  =  user_mapping 。setdefault （realmName ， {}）。setdefault （user ， {}）
+    userDict [ “password” ]  =  密码
+    userDict [ “description”]  =  描述
+    userDict [ “roles” ]  =  角色
 
-<hr/>
 
-<h3 id="toc_1">存储型</h3>
+####################################### #########################################＃
+SERVER OPTIONS 
+＃===== ================================================== ======================== 
+＃在这个WSGI服务器中运行WsgiDAV。
+＃支持的服务器：“cheroot”，“cherrypy-wsgiserver”，“ext_wsgiutils”，
+＃“flup-fcgi”，“flup-fcgi-fork”，“paste”，“wsgiref” 
+＃“wsgiref”和“ext_wsgiutils”内置的服务器，应该*不* 
+生产中使用。
+＃所有其他服务器必须已经安装，例如`pip install cheroot`。
+＃（二进制发行版已经包含了&#39;cheroot&#39;）
+＃默认：“cheroot”，使用命令行上的--server选项来改变它。
 
-<ul>
-<li>原理<br/></li>
-</ul>
+#server =“cheroot” 
 
-<hr/>
+＃在初始化时传递给服务器的附加参数（取决于`server`）
+＃例如，对于cheroot：
 
-<ul>
-<li>检测方法<br/>
-<strong>检测场景</strong>：存在富文本编辑器的地方；用户的输入信息会作为固定的值回显到页面中；后台管理应用中维护用户输入的相关信息。<br/>
-1.手工在一些输入框中或者post参数中加入污染的JS代码，根据返回的页面源码中是否成功嵌入JS代码来判断XSS是否存在(注入前端转义的情况)。<br/>
-2.如果注入的代码经过后端处理后，永久性的嵌入到了页面当中，则该XSS为存储型的。<br/>
-3.如果尝试注入的代码在页面中均被html编码，则再考虑其数据的流转会不会在后台其他应用中处理这些输入数据，如果有，对应的后台应用是否也做了完善的过滤机制。<br/>
-4.可远程搭建XSS检测平台，如果有XSS测试代码被触发，则自动发起链接到该平台上，这样相对来说可以测试那些未知的数据流向是否造成问题。<br/></li>
-</ul>
+#server_args = { 
+＃“numthreads”：10，
+＃“max”：-1，
+＃“request_queue_size “：5，
+＃”timeout“：10，
+＃”shutdown_timeout“：5，
+＃”verbose“：0，
+＃} 
 
-<hr/>
+＃服务器端口（默认：8080，在命令行使用--port）
+port  =  8080 
 
-<ul>
-<li>修复方案<br/>
-1.输出时统一使用 htmlEscape（）转义用户输入的数据，将html、js中涉及到的关键字符进行html编码处理后再输出到页面上。<br/>
-2.如果存在用户编写文章等类似用户可以自定义页面样式的功能，则限制用户输入，采用严格的白名单来过滤用户的输入，这种过滤应在后端应实现。(很多开源的第三方富文本编辑器，部分编辑器仅在JS端进行过滤，而不在后端进行关键字过滤)。<br/></li>
-</ul>
+＃服务器主机名默认：localhost，
+  
 
-<hr/>
+＃================================================= ============================== 
+＃启用SSL支持
+＃注意：
+＃有效的证书必须与服务器的主机名匹配，所以假的证书将
+不会在所有情况下工作。
+＃改为创建自己的证书！
+ 
+＃ssl_certificate =“wsgidav / server / sample_bogo_server.crt” 
+＃ssl_private_key =“wsgidav / server / sample_bogo_server.key” 
+＃ssl_certificate_chain = None 
 
-<h3 id="toc_2">基于DOM型</h3>
+＃cheroot服务器支持&#39;builtin&#39;和&#39;pyopenssl&#39;（默认值：&#39;builtin&#39;）
+＃ssl_adapter = pyopenssl“ 
 
-<ul>
-<li>原理<br/></li>
-</ul>
 
-<hr/>
+＃=============================================== ================================= 
+＃Misc。setings 
+＃
 
-<p>没啥可说的，可以当成是特殊的反射型。</p>
+＃将MS-Author-Via响应头添加到OPTIONS命令，以允许
+使用Microsoft Office 
 
-<ul>
-<li>检测方法<br/></li>
-</ul>
+编辑＃（默认值：False）add_header_MS_Author_Via  =  True 
 
-<hr/>
 
-<ul>
-<li>修复方案<br/></li>
-</ul>
+＃以字节为单位的块大小
 
-<hr/>
+＃block_size = 8192 
 
-<ul>
-<li>参考<br/>
-<a href="https://www.owasp.org/index.php/Cross-site_Scripting_(XSS)">XSS跨站脚本</a>
-## SQL_Inject<br/></li>
-<li>原理<br/></li>
-</ul>
 
-<hr/>
+＃将此值设置为True，强制不引用PATH_INFO。这应该已经由WSGI 
+＃Framework 
 
-<p>开发人员使用直接拼接 sql 的方法来访问数据库，导致攻击者能通过特殊构造的语句控制代码逻辑。典型的代码与数据没有分离导致的安全问题之一。</p>
+完成了，所以这个设置只能用来解决那里的意外问题（见问题＃8）。＃unquote_path_info = False 
 
-<ul>
-<li>检测方法<br/></li>
-</ul>
 
-<hr/>
+＃使用UTF-8重新编码PATH_INFO（回落到ISO-8859-1）。
+＃这似乎是错误的，因为每个PEP 3333 PATH_INFO始终是ISO-8859-1编码
+＃（请参阅https://www.python.org/dev/peps/pep-3333/#unicode-issues）。
+＃但是，在使用中文字符访问资源时，似乎可以解决错误
+（例如，参见问题＃73）。
+＃设置为`None`（默认），仅对Python 3启用。
 
-<ul>
-<li>常规方法<br/>
-<code>
-1 ，新建一个1 .txt文件，burp抓包将包含关键参数的请求存入。<br/>
-2 ，使用sqlmap 进行扫描（python sqlmap [options] [file path]）<br/>
-3、等待结果输出
-</code></li>
-<li>另一种常规方法<br/>
-<code>
-使用burp插件SQLiPy<br/>
-方案一（通用）：将sqlapi地址配置成 192.168.2.22 2222<br/>
-方案二：使用sqlipy生成测试语句，然后添加 -p 参数，指定注入参数，然后在 shell 里面运行 sqlmap。<br/>
-一个指定参数的SqlMap示例语句：    <br/>
-sqlmap -u “ http://xxxxxx.com:80/x/xx?x_id=1507 ” --method = “GET”-- cookie = “SESSIONID = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&quot;<br/>
---user-agent= &quot;Mozilla / 5.0（X11; Linux_x86_64; RV：60.0）/ 20100101火狐/ 60.0&quot;  --delay=0 --timeout=30 --retries=0 --dbms=&quot;MySQL&quot;  --os=Linux   <br/>
---level=3 --risk=3 --threads=2 --time-sec=10 -b --batch --answers=&quot;crack=N,dict = N&quot;  -p &quot;zone_id&quot; --tables           
-</code>
-我们在跑注入的时候需要重点设置的参数：<br/>
--risk=3<br/>
--level=3<br/>
---threads=2<br/>
---dbms和–os去问开发或者测试<br/>
--p 指定阐述减少服务器压力</li>
-<li>不太常规的方法<br/>
-1、写一个web界面调用sqlmapapi<br/>
-2、直接找开发拉代码过来进行审计</li>
-<li>修复方案<br/></li>
-</ul>
+＃re_encode_path_info =无
 
-<hr/>
 
-<p>1、使用安全的API ，完全避免使用解释器，或提供参数化界面的接口，或迁移到ORM 或实体框架(通常开发框架里会自带访问sql的方法来预防注入)。<br/><br/>
-2、做参数绑定，预编译查询。</p>
+＃============================================= ================================== 
+＃中间件
+＃＃
+使用此部分来修改默认中间件堆栈
 
-<ul>
-<li>参考<br/>
-<a href="https://www.owasp.org/index.php/SQL_Injection">SQL注入</a></li>
-</ul>
+＃from wsgidav .dir_browser import WsgiDavDirBrowser＃
+from debug_filter import WsgiDavDebugFilter＃
+from http_authenticator import HTTPAuthenticator 
+#from error_printer import ErrorPrinter 
+#middleware_stack = [WsgiDavDirBrowser，HTTPAuthenticator，ErrorPrinter，WsgiDavDebugFilter]
+
+＃================================================= ============================== 
+＃调试
+
+verbose  =  1        ＃0  - 没有输出（除了应用程序例外）          
+                     ＃1  - 显示单一（HTTP日志记录）
+                     ＃2  - 显示附加事件
+                     ＃3  - 显示完整的请求/响应头信息（HTTP日志记录）
+                     ＃请求正文和GET响应正文未显示
+
+
+＃启用特定的模块记录器
+＃Eg [“lock_manager”，“property_manager “，”http_authenticator“，...] 
+enable_loggers  =  [] 
+
+＃启用最大值。记录某些http方法
+＃Eg [“COPY”，“DELETE”，“GET”，“HEAD”，“LOCK”，“MOVE”，
+debug_methods  =  [] 
+
+＃启用最大值。在包含某些字符串的石蕊套件测试中进行日志记录
+＃Eg [“lock_excl”，“notowner_modify”，“fail_cond_put_unlocked”，...] 
+debug_litmus  =  [] 
+
+
+################## ################################################## ############# 
+WsgiDavDirBrowser 
+
+dir_browser  =  { 
+    “enable” ： True ，               ＃为集合的GET请求呈现HTML列表
+    “response_trailer” ： “” ，       ＃原始HTML代码，附加为页脚
+    “davmount” ： 假，            ＃发送&lt;dm：mount&gt;
+    “ms_mount” ： False ，            ＃添加一个“打开为webfolder”链接（需要Windows）
+    “ms_sharepoint_plugin” ： True ， ＃调用MS 
+    Offce 文档以使用WebDAV进行编辑“ms_sharepoint_urls” ： False ，  ＃
+Prepend&#39;ms -word：ofe | u |” 到MS Offce 
+文档的URL ＃“app_class”：MyBrowser，
+
+
+
+
+
+
+
+
+
+＃默认值：死性不支持
+wsgidav.property_manager.PropertyManager：＃也可用
+＃wsgidav.property_manager.ShelvePropertyManager 
+＃
+＃查看如何开发定制物业管理的文档。
+＃注意，默认的PropertyManager在内存中工作，因此不是
+＃持久化的。
+
+###使用内存中的属性管理器（不是永久的）
+＃（这与传递&#39;propsmanager = True&#39;相同）
+＃from wsgidav.property_manager import PropertyManager 
+#propsmanager = PropertyManager（）
+
+###使用基于持久性架构的属性管理器
+＃从wsgidav.property_manager导入ShelvePropertyManager
+#propsmanager = ShelvePropertyManager（“wsgidav-props.shelve”）
+
+###使用基于持久性MongoDB的属性管理器
+＃from wsgidav.addons.mongo_property_manager import MongoPropertyManager 
+#prop_man_opts = {} 
+#propsmanager = MongoPropertyManager（prop_man_opts）
+
+###使用基于持久性CouchDB属性管理器
+#from wsgidav.addons.couch_property_manager import CouchPropertyManager 
+#prop_man_opts = {} 
+#propsmanager = CouchPropertyManager（prop_man_opts）
+
+###使用内存中的属性管理器（NOT persistent）
+propsmanager  =  True 
+
+
+###可选的附加动态属性修改
+＃注意：默认情况下，像文件大小和上次修改时间的生活属性是
+＃只读，但如果底层DAV提供程序
+＃支持
+，则可以在这里覆盖。现在只有FileSystemProvider支持它，只有＃更改为上次修改的时间戳。使用下面的mutable_live_props 
+＃列表来
+启用它，以允许客户端使用utime系统调用，或者例如＃touch 或cp / rsync命令与挂载的
+＃DAV共享中
+的preserve-timestamp标志一起使用。＃请注意，时间戳是在实际的文件或目录中设置的，所以
+即使对于内存中的属性管理器
+，它也是持久的。还应该注意＃可变的最后修改可能不符合RFC 
+4918. #mutable_live_props = [“{DAV：} getlastmodified”]
+
+
+＃================================================= ============================== 
+＃锁管理器
+＃＃
+取消注释此行以指定您自己的锁管理器。                    
+＃默认值：wsgidav.lock_storage.LockStorageDict 
+＃还有：wsgidav.lock_storage.LockStorageShelve 
+＃
+＃查看如何开发自定义锁管理器的文档。
+＃注意默认的LockStorageDict在内存中工作，因此不是
+＃持久化的。
+                 
+＃示例：使用内存中的锁存储
+＃（这与默认情况下传递&#39;locksmanager = True&#39;相同）
+＃from wsgidav.lock_storage import LockStorageDict 
+#locksmanager = LockStorageDict（）
+
+
+＃示例：使用基于PERSISTENT架构的锁管理器
+＃from wsgidav.lock_storage import LockStorageShelve 
+#locksmanager = LockStorageShelve（“wsgidav-locks.shelve”）
+
+
+##################### ################################################## #########＃
+SHARES 
+＃＃
+如果您想通过
+＃WsgiDAV共享文件
+发布位置“/ v_root”中的文件，以便可以通过以下URL访问文件：＃http   ：/ / /服务器：端口/文件
+＃插入以下行：
+＃addShare（ “文件”， “/ v_root”） 
+＃或者，在Windows中：
+＃addShare（ “文件”， “C：\\ v_root”） ＃
+＃
+要使用根级别共享访问相同的目录
+＃http：// server：港口/
+
+＃add this line：＃addShare（“”，“/ v_root”）
+＃＃
+上面的例子使用wsgidav.fs_dav_provider.FilesystemProvider，它是
+缺省提供程序实现。
+＃＃
+如果您希望使用自定义提供程序，则必须将对象作为第二个
+参数
+
+
+传递。看下面的例子。  ###添加一个读写文件共享：
+addShare （“dav” ， r “C：\ temp” ）
+
+###添加一个只读文件共享：
+＃from wsgidav.fs_dav_provider import FilesystemProvider 
+#addShare（“tmp”， FilesystemProvider（“/ tmp”，readonly = True））
+
+
+###发布MySQL&#39;world&#39;数据库作为共享&#39;/ world-db&#39;
+#from wsgidav.addons.mysql_dav_provider import MySQLBrowserProvider 
+#addShare（“world-db”，MySQLBrowserProvider（“localhost”，“root”，“test”，“world”））
+
+
+### 
+从wsgidav.samples 
+发布一个虚拟结构。 virtual_dav_provider import VirtualResourceProvider #addShare（“virtres”，VirtualResourceProvider（））
+
+
+###发布一个Mercurial仓库
+＃from wsgidav.addons.hg_dav_provider import HgResourceProvider 
+#addShare（“hg”，HgResourceProvider（“PATH_OR_URL”））
+
+
+###发布一个MongoDB 
+#from wsgidav.samples.mongo_dav_provider import MongoResourceProvider 
+#mongo_dav_opts = {} 
+#addShare（“mongo”，MongoResourceProvider（mongo_dav_opts））
+
+
+################################################## ##############################＃
+AUTHENTICATION 
+＃================= ================================================== ============ 
+＃HTTP验证选项
+
+acceptbasic  =  True     ＃允许基本验证，True或False 
+acceptdigest  =  True    ＃允许摘要验证，True或False 
+defaultdigest  =  True   ＃True（默认摘要）或False默认基本）
+
+＃输入将被接受为授权用户的标题字段的名称。
+＃包括引号，例如：trusted_auth_header =“REMOTE_USER” 
+trusted_auth_header  =  无
+
+
+＃================================================= ============================== 
+＃域控制器
+＃取消注释此行以指定您自己的域控制器
+＃默认值：wsgidav.domain_controller，它采用下面的用户部分
+＃
+＃示例：
+＃使用域控制器，允许用户对一个认证
+＃Windows NT域或本地计算机。
+＃注意：NTDomainController需要基本身份验证：
+＃set acceptbasic = True，acceptdigest = False，defaultdigest = False 
+
+#from wsgidav.addons.nt_domain_controller import NTDomainController 
+#domaincontroller = NTDomainController（presetdomain = None，presetserver = None）
+#acceptbasic = True 
+#acceptdigest =假
+#defaultdigest = False 
+
+
+＃============================================= ================================== 
+＃USERS 
+＃＃
+此部分仅供DEFAULT域控制器使用。
+＃
+＃用户被每领域中定义的：
+＃ADDUSER（&lt;境界&gt;，&lt;用户&gt;，&lt;密码&gt;，&lt;描述&gt;） ＃   
+＃
+请注意，缺省域控制器使用共享名作为领域名称。   
+＃＃
+如果没有用户指定领域，则不需要认证。
+＃因此授予读写访问匿名！
+＃＃
+注意：如果您希望使用Windows WebDAV支持（例如Windows XP的My 
+＃网络位置），则需要将用户的域作为
+
+＃username 
+
+（注意DOUBLE斜线），例如：＃addUser（“v_root”，“domain \\ user”，“password”，“description”）addUser （“” ， “tester” ， “secret” ， “” ）
+ADDUSER （“” ， “tester2” ， “secret2” ，“”  ）
+
+#addUser（ “DAV”， “测试器”， “秘密”， “”）
+#addUser（ “DAV”， “tester2”， “secret2”，“ “）
+
+#addUser（”virtres“，”tester“，”secret“，”“）
+</code></pre>
 
                         
                       </div>
@@ -289,7 +489,7 @@ sqlmap -u “ http://xxxxxx.com:80/x/xx?x_id=1507 ” --method = “GET”-- coo
                 <div class="read-more clearfix">
                   <div class="more-left left">
                   
-                    <span class="date">2018/12/13 15:42 下午</span>
+                    <span class="date">2018/12/13 18:37 下午</span>
                     <span>posted in&nbsp;</span> 
           				  
           					    <span class="posted-in"><a href='%E5%A5%87%E6%B7%AB%E5%B7%A7%E6%8A%80.html'>奇淫巧技</a></span>
@@ -369,6 +569,8 @@ sqlmap -u “ http://xxxxxx.com:80/x/xx?x_id=1507 ” --method = “GET”-- coo
             <a href="CTF.html"><strong>CTF</strong></a>
         
             <a href="%E8%99%9A%E6%8B%9F%E5%AE%9E%E9%AA%8C%E5%AE%A4.html"><strong>虚拟实验室</strong></a>
+        
+            <a href="%E6%B5%8F%E8%A7%88%E5%99%A8.html"><strong>浏览器</strong></a>
          
         </p>
 
@@ -385,31 +587,31 @@ sqlmap -u “ http://xxxxxx.com:80/x/xx?x_id=1507 ” --method = “GET”-- coo
 	      
 		      
 			      <li class="post">
-			        <a href="15446897185202.html">从零开始的DVWA之环境搭建</a>
+			        <a href="15447676167973.html">我是如何从Google窃取你的照片的 - 我的3个Google漏洞赏金报告分享</a>
 			      </li>
 		     
 		  
 		      
 			      <li class="post">
-			        <a href="15446893463166.html">xss常用payload</a>
+			        <a href="15446978130922.html">enigmagroup入门挑战-基础1</a>
 			      </li>
 		     
 		  
 		      
 			      <li class="post">
-			        <a href="15446892905759.html">同源策略</a>
+			        <a href="15446974404003.html">wsgidav独立服务器使用手册</a>
 			      </li>
 		     
 		  
 		      
 			      <li class="post">
-			        <a href="15446891028198.html">xss测试备忘录</a>
+			        <a href="15446973583267.html">解决npm更新或安装软件时下载较慢等问题</a>
 			      </li>
 		     
 		  
 		      
 			      <li class="post">
-			        <a href="15446890453437.html">xss基础</a>
+			        <a href="15446972266900.html">汉化firefox火狐浏览器</a>
 			      </li>
 		     
 		  
