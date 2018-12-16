@@ -4,13 +4,24 @@
   <title><![CDATA[lonelyorのblog]]></title>
   <link href="www.lonelyor.org/lonelyorNotes/atom.xml" rel="self"/>
   <link href="www.lonelyor.org/lonelyorNotes/"/>
-  <updated>2018-12-14T14:26:10+08:00</updated>
+  <updated>2018-12-16T17:39:12+08:00</updated>
   <id>www.lonelyor.org/lonelyorNotes/</id>
   <author>
     <name><![CDATA[]]></name>
     
   </author>
   <generator uri="http://www.mweb.im/">MWeb</generator>
+  
+  <entry>
+    <title type="html"><![CDATA[Markdown基础语法]]></title>
+    <link href="www.lonelyor.org/lonelyorNotes/15449531124166.html"/>
+    <updated>2018-12-16T17:38:32+08:00</updated>
+    <id>www.lonelyor.org/lonelyorNotes/15449531124166.html</id>
+    <content type="html"><![CDATA[
+<p>占坑，内容以后写</p>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[我是如何从Google窃取你的照片的 - 我的3个Google漏洞赏金报告分享]]></title>
@@ -851,7 +862,7 @@ http://localhost/DVWA-master/login.php<br/><br/>
     <id>www.lonelyor.org/lonelyorNotes/15446892905759.html</id>
     <content type="html"><![CDATA[
 <blockquote>
-<p>description: 摘自网络，出处忘了。</p>
+<p>摘自网络，出处忘了。</p>
 </blockquote>
 
 <p>同源策略（SOP，Same Origin Policy），两个页面的【协议】【域名】【端口】都相同，则两个页面具有相同的源，任何一个不同都是不同源的。<br/>
@@ -867,7 +878,7 @@ http://localhost/DVWA-master/login.php<br/><br/>
 
 <h2 id="toc_0">同源策略控制内容</h2>
 
-<p><strong>同源策略是禁止读取HTTP回复，并不会禁止脚本执行，也不会禁止HTTP请求，因此在防御CSRF上作用是非常有限的，因为CSRF在请求发出的时候就已经达到了攻击的目的。</strong><br/>
+<p><em>同源策略是禁止读取HTTP回复，并不会禁止脚本执行，也不会禁止HTTP请求，因此在防御CSRF上作用是非常有限的，因为CSRF在请求发出的时候就已经达到了攻击的目的。</em><br/>
 一般情况下，静态资源通常不受同源策略限制，如有js/css/jpg/png等。</p>
 
 <p>同源策略控制了不同源之间的交互，例如在使用<code>XMLHttpRequest</code>或<code>img</code>标签时则会受到同源策略的约束，这些交互通常分为三类。</p>
@@ -2507,152 +2518,6 @@ wordpress 有一个备份博客的插件，该插件会为备份创建一个自�
 <li><a href="http://www.freebuf.com/articles/4908.html">http://www.freebuf.com/articles/4908.html</a><br/></li>
 <li><a href="https://support.microsoft.com/zh-cn/help/121007/how-to-disable-8-3-file-name-creation-on-ntfs-partitions">https://support.microsoft.com/zh-cn/help/121007/how-to-disable-8-3-file-name-creation-on-ntfs-partitions</a><br/></li>
 <li><a href="https://soroush.secproject.com/downloadable/microsoft_iis_tilde_character_vulnerability_feature.pdf">https://soroush.secproject.com/downloadable/microsoft_iis_tilde_character_vulnerability_feature.pdf</a><br/></li>
-</ul>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Web安全工程师求职清单]]></title>
-    <link href="www.lonelyor.org/lonelyorNotes/15446864537652.html"/>
-    <updated>2018-12-13T15:34:13+08:00</updated>
-    <id>www.lonelyor.org/lonelyorNotes/15446864537652.html</id>
-    <content type="html"><![CDATA[
-<blockquote>
-<p>一年前写的一点玩意，没什么卵用</p>
-</blockquote>
-
-<h2 id="toc_0">安全资讯</h2>
-
-<p><a href="http://www.freebuf.com/">freebuf</a></p>
-
-<p><a href="https://www.t00ls.net/">tools</a></p>
-
-<p><a href="https://www.secpulse.com/">安全脉搏</a></p>
-
-<p><a href="https://packetstormsecurity.com/">数据包风暴</a></p>
-
-<p><a href="http://www.4hou.com/">嘶吼</a></p>
-
-<p><a href="https://www.aqniu.com/">安全牛</a></p>
-
-<p><a href="https://www.anquanke.com/">安全客</a></p>
-
-<p><a href="https://www.sec-wiki.com/">sec-wiki</a></p>
-
-<p><a href="http://www.secdoctor.com/">中国信息安全博士网</a></p>
-
-<h2 id="toc_1">威胁情报</h2>
-
-<p>暂略</p>
-
-<h2 id="toc_2">安全工具</h2>
-
-<p><a href="https://www.ctftools.com/down/">最强安全工具集</a></p>
-
-<ul>
-<li>burpsuite(抓包)</li>
-<li>sqlmap(sql注入)</li>
-<li>whireshark(网络抓包)</li>
-<li>中国菜刀(webshell、一句话后门)</li>
-<li>HxD(十六进制编辑器和磁盘编辑器)</li>
-<li>nmap(扫描)</li>
-<li>hydra(爆破)</li>
-<li>cain(爆破)</li>
-<li>metasploit(漏洞利用)</li>
-<li>mitmproxy(http/https代理)</li>
-<li>commix(命令注入)</li>
-<li>httrack(网站克隆)</li>
-<li>netcat(瑞士军刀-网络调试和探测工具)</li>
-<li>scapy(python的交互式数据包操作程序和库)</li>
-<li>empire(域渗透)</li>
-</ul>
-
-<h2 id="toc_3">靶机环境</h2>
-
-<h2 id="toc_4">安全知识库</h2>
-
-<p><a href="https://www.anquanquan.info/">安全圈</a></p>
-
-<p><a href="http://wiki.open.qq.com/wiki/%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91%E5%AE%89%E5%85%A8%E8%A7%84%E8%8C%83">腾讯安全开发规范</a></p>
-
-<p><a href="https://highon.coffee/blog/cheat-sheet/">安全研究备忘单</a></p>
-
-<p><a href="https://portswigger.net/kb/issues">Burp漏洞定义</a></p>
-
-<p><a href="https://www.offensive-security.com/metasploit-unleashed/">MSF框架终极指南</a></p>
-
-<p><a href="https://www.owasp.org/index.php/Main_Page">OWASP</a></p>
-
-<p><a href="http://vipread.com/index">vipread知识库</a></p>
-
-<p><a href="https://kb.help.rapid7.com/docs/">Rapid7知识库</a></p>
-
-<p><a href="https://kernelnewbies.org/">linux内核研究</a></p>
-
-<p><a href="http://www.loner.fm/bugs/">乌云漏洞</a></p>
-
-<p><a href="https://wooyun.js.org/">乌云文章</a></p>
-
-<p><a href="http://www.office-cn.net/t/api/index.html?web.htm">WindowsAPI参考手册</a></p>
-
-<p><a href="https://support.portswigger.net/customer/portal/articles/2326039-the-burp-methodology">Burp方法论</a></p>
-
-<p><a href="https://ctf-wiki.github.io/ctf-wiki/">CTF-Wiki</a></p>
-
-<p><a href="https://github.com/ctfs/">CTFs</a></p>
-
-<p><a href="https://ctftime.org">ctftime</a></p>
-
-<p><a href="https://www.codesec.net/">代码安全</a></p>
-
-<p><a href="https://silic.wiki/doku.php">习科小黑板</a></p>
-
-<p><a href="https://bbs.safewiki.org/portal.php">安全文库</a></p>
-
-<p><a href="http://webscan.360.cn/vul">360网站常见漏洞</a></p>
-
-<h2 id="toc_5">漏洞平台</h2>
-
-<p><a href="https://butian.360.cn/">补天</a></p>
-
-<p><a href="https://www.vulbox.com/">漏洞盒子</a></p>
-
-<p><a href="https://www.bugbank.cn/">漏洞银行</a></p>
-
-<p><a href="http://www.cnvd.org.cn/">CNVD国家信息安全漏洞共享平台</a></p>
-
-<p><a href="https://src.edu-info.edu.cn/">教育行业漏洞报告平台</a></p>
-
-<p><a href="https://www.seebug.org">Seebug</a></p>
-
-<p><a href="http://0xsafe.org/vuldb.html">Vuldbs漏洞平台</a></p>
-
-<h2 id="toc_6">技能要求</h2>
-
-<ul>
-<li>不同场景下的渗透测试流程、方法</li>
-<li>常见漏洞的攻击方法和防御方法</li>
-<li>代码级白盒测试能力</li>
-<li>owasp_top10概念、原理、测试方法、防御方法</li>
-<li>主流防火墙、IDS、IPS、漏洞扫描工具的安装、使用方法</li>
-<li>熟悉python、php、javascript、c、c++等语言的一种或多种</li>
-<li>cissp之类的证书或ctf解题能力是加分项</li>
-<li>各种靶机环境搭建</li>
-<li>安全分析报告的编写</li>
-<li>对业务快速熟悉的能力（业务安全重点、应用范围划分、业务安全基线）</li>
-<li>spring、struts、hibernate框架安全相关</li>
-<li>web组件加固、服务器加固、数据库加固</li>
-<li>域渗透、dns、arp等内网渗透知识</li>
-<li>各类提权如系统提权、数据库提权等</li>
-<li>风险评估、等级保护、安全体系规划、安全体系建设。包括信息资产管理、安全威胁和风险评估、安全解决方案制定、信息安全体系实施</li>
-<li>Nginx、Apache、Tomcat等安全配置基线</li>
-<li>各类安全测试标准(ISSAF、OSSTMM、OWASP、微软SDLC、OPENSAMM、BSIMM、SSECMM)</li>
-<li>网络日志分析、攻击流量检测</li>
-<li>hadoop、openstack、sdn云安全</li>
-<li>mongodb、redis、HBASE等nosql安全</li>
-<li>burpsuite插件编写</li>
-<li>python脚本开发能力、shell脚本开发能力</li>
 </ul>
 
 ]]></content>
