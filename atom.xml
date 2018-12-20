@@ -4,7 +4,7 @@
   <title><![CDATA[lonelyorのblog]]></title>
   <link href="www.lonelyor.org/lonelyorNotes/atom.xml" rel="self"/>
   <link href="www.lonelyor.org/lonelyorNotes/"/>
-  <updated>2018-12-19T16:46:04+08:00</updated>
+  <updated>2018-12-20T13:44:04+08:00</updated>
   <id>www.lonelyor.org/lonelyorNotes/</id>
   <author>
     <name><![CDATA[]]></name>
@@ -793,6 +793,8 @@ http://localhost/DVWA-master/login.php<br/><br/>
 <p>===&gt;常用代码如下：</p>
 
 <p><code>&lt;script&gt;alert(8888)&lt;/script&gt;</code></p>
+
+<p><code>&lt;img src=1 onerror=alert(1)&gt;</code></p>
 
 <p><code>&lt;script&gt;confirm(8888)&lt;/script&gt;</code></p>
 
