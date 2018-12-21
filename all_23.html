@@ -86,11 +86,11 @@
     <li><label>Categories</label></li>
 
         
+            <li><a href="%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F.html">操作系统</a></li>
+        
             <li><a href="Web%E6%94%BB%E9%98%B2.html">Web攻防</a></li>
         
-            <li><a href="%E5%A5%87%E6%B7%AB%E5%B7%A7%E6%8A%80.html">奇淫巧技</a></li>
-        
-            <li><a href="%E7%B3%BB%E7%BB%9F%E4%BC%98%E5%8C%96%E8%BE%85%E5%8A%A9.html">系统优化辅助</a></li>
+            <li><a href="%E5%BC%80%E5%8F%91.html">开发</a></li>
         
             <li><a href="CTF.html">CTF</a></li>
         
@@ -119,174 +119,21 @@
 		<div class="markdown-body home-categories">
 		
 			<div class="article">
-                <a class="clearlink" href="15446869314706.html">
+                <a class="clearlink" href="15446972266900.html">
                 
-                  <h1>xss、csrf、sql注入快速检测方法</h1>
+                  <h1>汉化firefox火狐浏览器</h1>
                   <div class="a-content">
                       
                       <div class="a-content-text">
                         
-                        	<h2 id="toc_0">CSRF跨站请求伪造</h2>
+                        	<p>1、点击 help——about 查看火狐版本<br/><br/>
+2、在火狐浏览器输入:<a href="http://ftp.mozilla.org,%E6%8C%89%E7%85%A7%E6%88%91%E4%B8%8B%E9%9D%A2%E7%BB%99%E7%9A%84%E7%BD%91%E5%9D%80%E4%BE%9D%E6%AC%A1%E9%80%89%E6%8B%A9%E7%9B%AE%E5%BD%95%EF%BC%8C%E8%AF%AD%E8%A8%80%E5%8C%85%E5%9C%A8xpi%E7%9B%AE%E5%BD%95%E4%B8%8B%EF%BC%8C%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87%EF%BC%88zh-CN.xpi%EF%BC%89/%E7%B9%81%E4%BD%93%EF%BC%88zh-TW.xpi%EF%BC%89%E3%80%82">http://ftp.mozilla.org,按照我下面给的网址依次选择目录，语言包在xpi目录下，简体中文（zh-CN.xpi）/繁体（zh-TW.xpi）。</a><br/><br/>
+为了方便也可以直接拷贝下列链接到浏览器地址栏，安装。<br/><br/>
+32位系统目录：<a href="http://ftp.mozilla.org/pub/firefox/releases/50.1.0/linux-i686/xpi/zh-CN.xpi">http://ftp.mozilla.org/pub/firefox/releases/50.1.0/linux-i686/xpi/zh-CN.xpi</a><br/><br/>
+64位系统目录：<a href="http://ftp.mozilla.org/pub/firefox/releases/50.1.0/linux-x86_64/xpi/zh-CN.xpi">http://ftp.mozilla.org/pub/firefox/releases/50.1.0/linux-x86_64/xpi/zh-CN.xpi</a><br/><br/>
+记得把版本号修改成浏览器当前版本号。</p>
 
-<ul>
-<li>原理<br/>
-攻击者在受害者不知情的情况下，以受害者的名义伪造请求发送给受攻击的站点，从而在未授权的情况下执行在权限保护之下的操作。<br/>
-CSRF攻击的对象是那些可以直接产生数据改变的服务，而对于读取数据的服务，则不需要进行 CSRF 的保护。<br/></li>
-</ul>
-
-<hr/>
-
-<ul>
-<li>检测方法<br/>
-1.查看重要操作接口提交的请求中是否包含 csrf_token<br/>
-2.更改和删除 csrf_token 后提交表单，查看请求是否能被正确响应。<br/></li>
-</ul>
-
-<hr/>
-
-<ul>
-<li>修复方案<br/>
-1.对涉及数据<strong>增、删、改</strong>操作提交的表单中添加csrf_token，token 参数应校验一次后失效。<br/>
-2.最好是在容器或框架上<strong>全局</strong>启用 csrf_token。(很多框架自带的解决办法容易遗漏一次失效的问题)<br/>
-3.token 应有一定的<strong>时效性</strong>，建议为30分钟，过期需失效（即：单页面停留30分钟后，用户提交请求需提示“页面过期，请刷新页面后再次提交”）<br/></li>
-</ul>
-
-<hr/>
-
-<ul>
-<li>参考<br/>
-<a href="https://www.owasp.org/index.php/Testing_for_CSRF_(OTG-SESS-005)">CSRF测试</a><br/>
-<a href="https://www.owasp.org/index.php/Cross-Site_Request_Forgery_(CSRF)">跨站请求伪造（CSRF）</a><br/>
-<a href="https://www.ibm.com/developerworks/cn/web/1102_niugang_csrf/">CSRF 攻击的应对之道</a><br/>
-## XSS跨站脚本攻击<br/>
-### 反射型</li>
-<li>原理<br/></li>
-</ul>
-
-<hr/>
-
-<ul>
-<li>检测方法<br/>
-<strong>检测场景</strong>：任何有输入输出地方......<br/>
-1.使用通用的web扫描器一般的都能发掘潜在的反射型XSS漏洞。<br/>
-2.手工在一些输入框中或者post参数中加入拼凑过的JS代码，根据返回的页面源码中是否成功嵌入JS代码来判断XSS是否存在。<br/>
-3.如果注入的代码经过后端处理后，永久性的嵌入到了页面当中，则该XSS为存储型的，反射型的XSS一般依赖于该次请求，且同时只能被用户自己所看到。<br/></li>
-</ul>
-
-<hr/>
-
-<ul>
-<li>修复方案<br/>
-1.输出时统一使用 htmlEscape（）转义用户输入的数据，将html、js中涉及到的关键字符进行html编码处理后再输出到页面上。<br/>
-2.如果存在用户编写文章等类似用户可以自定义页面样式的功能，则限制用户输入，采用严格的白名单来过滤用户的输入，这种过滤应在后端应实现。(很多开源的第三方富文本编辑器，部分编辑器仅在JS端进行过滤，而不在后端进行关键字过滤)。<br/></li>
-</ul>
-
-<hr/>
-
-<h3 id="toc_1">存储型</h3>
-
-<ul>
-<li>原理<br/></li>
-</ul>
-
-<hr/>
-
-<ul>
-<li>检测方法<br/>
-<strong>检测场景</strong>：存在富文本编辑器的地方；用户的输入信息会作为固定的值回显到页面中；后台管理应用中维护用户输入的相关信息。<br/>
-1.手工在一些输入框中或者post参数中加入污染的JS代码，根据返回的页面源码中是否成功嵌入JS代码来判断XSS是否存在(注入前端转义的情况)。<br/>
-2.如果注入的代码经过后端处理后，永久性的嵌入到了页面当中，则该XSS为存储型的。<br/>
-3.如果尝试注入的代码在页面中均被html编码，则再考虑其数据的流转会不会在后台其他应用中处理这些输入数据，如果有，对应的后台应用是否也做了完善的过滤机制。<br/>
-4.可远程搭建XSS检测平台，如果有XSS测试代码被触发，则自动发起链接到该平台上，这样相对来说可以测试那些未知的数据流向是否造成问题。<br/></li>
-</ul>
-
-<hr/>
-
-<ul>
-<li>修复方案<br/>
-1.输出时统一使用 htmlEscape（）转义用户输入的数据，将html、js中涉及到的关键字符进行html编码处理后再输出到页面上。<br/>
-2.如果存在用户编写文章等类似用户可以自定义页面样式的功能，则限制用户输入，采用严格的白名单来过滤用户的输入，这种过滤应在后端应实现。(很多开源的第三方富文本编辑器，部分编辑器仅在JS端进行过滤，而不在后端进行关键字过滤)。<br/></li>
-</ul>
-
-<hr/>
-
-<h3 id="toc_2">基于DOM型</h3>
-
-<ul>
-<li>原理<br/></li>
-</ul>
-
-<hr/>
-
-<p>没啥可说的，可以当成是特殊的反射型。</p>
-
-<ul>
-<li>检测方法<br/></li>
-</ul>
-
-<hr/>
-
-<ul>
-<li>修复方案<br/></li>
-</ul>
-
-<hr/>
-
-<ul>
-<li>参考<br/>
-<a href="https://www.owasp.org/index.php/Cross-site_Scripting_(XSS)">XSS跨站脚本</a>
-## SQL_Inject<br/></li>
-<li>原理<br/></li>
-</ul>
-
-<hr/>
-
-<p>开发人员使用直接拼接 sql 的方法来访问数据库，导致攻击者能通过特殊构造的语句控制代码逻辑。典型的代码与数据没有分离导致的安全问题之一。</p>
-
-<ul>
-<li>检测方法<br/></li>
-</ul>
-
-<hr/>
-
-<ul>
-<li>常规方法<br/>
-<code>
-1 ，新建一个1 .txt文件，burp抓包将包含关键参数的请求存入。<br/>
-2 ，使用sqlmap 进行扫描（python sqlmap [options] [file path]）<br/>
-3、等待结果输出
-</code></li>
-<li>另一种常规方法<br/>
-<code>
-使用burp插件SQLiPy<br/>
-方案一（通用）：将sqlapi地址配置成 192.168.2.22 2222<br/>
-方案二：使用sqlipy生成测试语句，然后添加 -p 参数，指定注入参数，然后在 shell 里面运行 sqlmap。<br/>
-一个指定参数的SqlMap示例语句：    <br/>
-sqlmap -u “ http://xxxxxx.com:80/x/xx?x_id=1507 ” --method = “GET”-- cookie = “SESSIONID = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&quot;<br/>
---user-agent= &quot;Mozilla / 5.0（X11; Linux_x86_64; RV：60.0）/ 20100101火狐/ 60.0&quot;  --delay=0 --timeout=30 --retries=0 --dbms=&quot;MySQL&quot;  --os=Linux   <br/>
---level=3 --risk=3 --threads=2 --time-sec=10 -b --batch --answers=&quot;crack=N,dict = N&quot;  -p &quot;zone_id&quot; --tables           
-</code>
-我们在跑注入的时候需要重点设置的参数：<br/>
--risk=3<br/>
--level=3<br/>
---threads=2<br/>
---dbms和–os去问开发或者测试<br/>
--p 指定阐述减少服务器压力</li>
-<li>不太常规的方法<br/>
-1、写一个web界面调用sqlmapapi<br/>
-2、直接找开发拉代码过来进行审计</li>
-<li>修复方案<br/></li>
-</ul>
-
-<hr/>
-
-<p>1、使用安全的API ，完全避免使用解释器，或提供参数化界面的接口，或迁移到ORM 或实体框架(通常开发框架里会自带访问sql的方法来预防注入)。<br/><br/>
-2、做参数绑定，预编译查询。</p>
-
-<ul>
-<li>参考<br/>
-<a href="https://www.owasp.org/index.php/SQL_Injection">SQL注入</a></li>
-</ul>
+<p>另一种方法是打开扩展商店，输入chinese，然后添加即可。</p>
 
                         
                       </div>
@@ -295,10 +142,10 @@ sqlmap -u “ http://xxxxxx.com:80/x/xx?x_id=1507 ” --method = “GET”-- coo
                 <div class="read-more clearfix">
                   <div class="more-left left">
                   
-                    <span class="date">2018/12/13 15:42 下午</span>
+                    <span class="date">2018/12/13 18:33 下午</span>
                     <span>posted in&nbsp;</span> 
           				  
-          					    <span class="posted-in"><a href='%E5%A5%87%E6%B7%AB%E5%B7%A7%E6%8A%80.html'>奇淫巧技</a></span>
+          					    <span class="posted-in"><a href='%E6%B5%8F%E8%A7%88%E5%99%A8.html'>浏览器</a></span>
           				   
                   </div>
                   <div class="more-right right">
@@ -366,11 +213,11 @@ sqlmap -u “ http://xxxxxx.com:80/x/xx?x_id=1507 ” --method = “GET”-- coo
 
       	<p class="cat-list">
         
+            <a href="%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F.html"><strong>操作系统</strong></a>
+        
             <a href="Web%E6%94%BB%E9%98%B2.html"><strong>Web攻防</strong></a>
         
-            <a href="%E5%A5%87%E6%B7%AB%E5%B7%A7%E6%8A%80.html"><strong>奇淫巧技</strong></a>
-        
-            <a href="%E7%B3%BB%E7%BB%9F%E4%BC%98%E5%8C%96%E8%BE%85%E5%8A%A9.html"><strong>系统优化辅助</strong></a>
+            <a href="%E5%BC%80%E5%8F%91.html"><strong>开发</strong></a>
         
             <a href="CTF.html"><strong>CTF</strong></a>
         
@@ -393,31 +240,31 @@ sqlmap -u “ http://xxxxxx.com:80/x/xx?x_id=1507 ” --method = “GET”-- coo
 	      
 		      
 			      <li class="post">
-			        <a href="15453600721143.html">扫描网站备份文件思路</a>
+			        <a href="15453720146052.html">Pycharm编程遇到的技巧</a>
 			      </li>
 		     
 		  
 		      
 			      <li class="post">
-			        <a href="15453579778110.html">nano设置语法高亮</a>
+			        <a href="15453717965995.html">npm Cannot find module 'semver' --解决方案</a>
 			      </li>
 		     
 		  
 		      
 			      <li class="post">
-			        <a href="15453576869884.html">linux查看磁盘空间占用情况</a>
+			        <a href="15453716917526.html">mongodb安装配置（arch）</a>
 			      </li>
 		     
 		  
 		      
 			      <li class="post">
-			        <a href="15453574952135.html">crontab设置定时任务</a>
+			        <a href="15453714645346.html">linux安装配置aria2及其Web图形界面（debian为例）</a>
 			      </li>
 		     
 		  
 		      
 			      <li class="post">
-			        <a href="15453572892743.html">Atom设置和取消代理</a>
+			        <a href="15453713553710.html">linux下搜狗输入法不能用的解决办法</a>
 			      </li>
 		     
 		  

@@ -86,11 +86,11 @@
     <li><label>Categories</label></li>
 
         
+            <li><a href="%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F.html">操作系统</a></li>
+        
             <li><a href="Web%E6%94%BB%E9%98%B2.html">Web攻防</a></li>
         
-            <li><a href="%E5%A5%87%E6%B7%AB%E5%B7%A7%E6%8A%80.html">奇淫巧技</a></li>
-        
-            <li><a href="%E7%B3%BB%E7%BB%9F%E4%BC%98%E5%8C%96%E8%BE%85%E5%8A%A9.html">系统优化辅助</a></li>
+            <li><a href="%E5%BC%80%E5%8F%91.html">开发</a></li>
         
             <li><a href="CTF.html">CTF</a></li>
         
@@ -119,66 +119,17 @@
 		<div class="markdown-body home-categories">
 		
 			<div class="article">
-                <a class="clearlink" href="15446861280668.html">
+                <a class="clearlink" href="15446968262703.html">
                 
-                  <h1>hackthebox邀请码</h1>
+                  <h1>OneDrive映射到本地（像访问本地磁盘一样访问网盘）</h1>
                   <div class="a-content">
                       
                       <div class="a-content-text">
                         
-                        	<blockquote>
-<p>不打算好好玩的麻烦不要瞎注册，大量的垃圾账号只会污染整个生态环境。</p>
-</blockquote>
+                        	<p>参考以下链接即可：<br/>
+<a href="http://baijiahao.baidu.com/s?id=1549908946659905&amp;wfr=spider&amp;for=pc">http://baijiahao.baidu.com/s?id=1549908946659905&amp;wfr=spider&amp;for=pc</a></p>
 
-<p>进入注册页面，观察页面js文件会找到以下内容：</p>
-
-<pre class="line-numbers"><code class="language-javascript">eval(function(p,a,c,k,e,d){e=function(c){return c.toString(36)};if(!&#39;&#39;.replace(/^/,String)){while(c--){d[c.toString(a)]=k[c]||c.toString(a)}k=[function(e){return d[e]}];e=function(){return&#39;\\w+&#39;};c=1};while(c--){if(k[c]){p=p.replace(new RegExp(&#39;\\b&#39;+e(c)+&#39;\\b&#39;,&#39;g&#39;),k[c])}}return p}(&#39;1 i(4){h 8={&quot;4&quot;:4};$.9({a:&quot;7&quot;,5:&quot;6&quot;,g:8,b:\&#39;/d/e/n\&#39;,c:1(0){3.2(0)},f:1(0){3.2(0)}})}1 j(){$.9({a:&quot;7&quot;,5:&quot;6&quot;,b:\&#39;/d/e/k/l/m\&#39;,c:1(0){3.2(0)},f:1(0){3.2(0)}})}&#39;,24,24,&#39;response|function|log|console|code|dataType|json|POST|formData|ajax|type|url|success|api|invite|error|data|var|verifyInviteCode|makeInviteCode|how|to|generate|verify&#39;.split(&#39;|&#39;),0,{}))
-</code></pre>
-
-<p>1、然后把这段代码放到 <a href="http://jsbeautifier.org/">http://jsbeautifier.org/</a> 进行美化，得出：<br/>
-2、</p>
-
-<pre class="line-numbers"><code class="language-javascript">function verifyInviteCode(code) {
-    var formData = {
-        &quot;code&quot;: code
-    };
-    $.ajax({
-        type: &quot;POST&quot;,
-        dataType: &quot;json&quot;,
-        data: formData,
-        url: &#39;/api/invite/verify&#39;,
-        success: function(response) {
-            console.log(response)
-        },
-        error: function(response) {
-            console.log(response)
-        }
-    })
-}
-
-function makeInviteCode() {
-    $.ajax({
-        type: &quot;POST&quot;,
-        dataType: &quot;json&quot;,
-        url: &#39;/api/invite/how/to/generate&#39;,
-        success: function(response) {
-            console.log(response)
-        },
-        error: function(response) {
-            console.log(response)
-        }
-    })
-}
-</code></pre>
-
-<p>可以看出上述代码是让我们访问：<a href="https://www.hackthebox.eu/api/invite/generate">https://www.hackthebox.eu/api/invite/generate</a><br/>
-然后修改请求方式为post<br/>
-于是就得到了：</p>
-
-<pre class="line-numbers"><code class="language-javascript">{&quot;success&quot;:1,&quot;data&quot;:{&quot;code&quot;:&quot;VlJQS1QtQUNXRUstT0tYREwtQ0lZQVUtS0NZSlU=&quot;,&quot;format&quot;:&quot;encoded&quot;},&quot;0&quot;:200}
-</code></pre>
-
-<p>将code进行base64解码，就得到了邀请码。</p>
+<p>举一反三，webdav、nfs、samba等都可以使用这种方式挂载，来方便访问。</p>
 
                         
                       </div>
@@ -187,10 +138,10 @@ function makeInviteCode() {
                 <div class="read-more clearfix">
                   <div class="more-left left">
                   
-                    <span class="date">2018/12/13 15:28 下午</span>
+                    <span class="date">2018/12/13 18:27 下午</span>
                     <span>posted in&nbsp;</span> 
           				  
-          					    <span class="posted-in"><a href='CTF.html'>CTF</a></span>
+          					    <span class="posted-in"><a href='Windows.html'>Windows</a></span>
           				   
                   </div>
                   <div class="more-right right">
@@ -258,11 +209,11 @@ function makeInviteCode() {
 
       	<p class="cat-list">
         
+            <a href="%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F.html"><strong>操作系统</strong></a>
+        
             <a href="Web%E6%94%BB%E9%98%B2.html"><strong>Web攻防</strong></a>
         
-            <a href="%E5%A5%87%E6%B7%AB%E5%B7%A7%E6%8A%80.html"><strong>奇淫巧技</strong></a>
-        
-            <a href="%E7%B3%BB%E7%BB%9F%E4%BC%98%E5%8C%96%E8%BE%85%E5%8A%A9.html"><strong>系统优化辅助</strong></a>
+            <a href="%E5%BC%80%E5%8F%91.html"><strong>开发</strong></a>
         
             <a href="CTF.html"><strong>CTF</strong></a>
         
@@ -285,31 +236,31 @@ function makeInviteCode() {
 	      
 		      
 			      <li class="post">
-			        <a href="15453600721143.html">扫描网站备份文件思路</a>
+			        <a href="15453720146052.html">Pycharm编程遇到的技巧</a>
 			      </li>
 		     
 		  
 		      
 			      <li class="post">
-			        <a href="15453579778110.html">nano设置语法高亮</a>
+			        <a href="15453717965995.html">npm Cannot find module 'semver' --解决方案</a>
 			      </li>
 		     
 		  
 		      
 			      <li class="post">
-			        <a href="15453576869884.html">linux查看磁盘空间占用情况</a>
+			        <a href="15453716917526.html">mongodb安装配置（arch）</a>
 			      </li>
 		     
 		  
 		      
 			      <li class="post">
-			        <a href="15453574952135.html">crontab设置定时任务</a>
+			        <a href="15453714645346.html">linux安装配置aria2及其Web图形界面（debian为例）</a>
 			      </li>
 		     
 		  
 		      
 			      <li class="post">
-			        <a href="15453572892743.html">Atom设置和取消代理</a>
+			        <a href="15453713553710.html">linux下搜狗输入法不能用的解决办法</a>
 			      </li>
 		     
 		  

@@ -2,12 +2,77 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
   <loc>www.lonelyor.org/lonelyorNotes/</loc>
-  <lastmod>2018-12-21T11:19:48+08:00</lastmod>
+  <lastmod>2018-12-21T14:12:35+08:00</lastmod>
 </url>
 
 <url>
-  <loc>www.lonelyor.org/lonelyorNotes/15453600721143.html</loc>
-  <lastmod>2018-12-21T10:41:12+08:00</lastmod>
+  <loc>www.lonelyor.org/lonelyorNotes/15453720146052.html</loc>
+  <lastmod>2018-12-21T14:00:14+08:00</lastmod>
+</url>
+
+<url>
+  <loc>www.lonelyor.org/lonelyorNotes/15453717965995.html</loc>
+  <lastmod>2018-12-21T13:56:36+08:00</lastmod>
+</url>
+
+<url>
+  <loc>www.lonelyor.org/lonelyorNotes/15453716917526.html</loc>
+  <lastmod>2018-12-21T13:54:51+08:00</lastmod>
+</url>
+
+<url>
+  <loc>www.lonelyor.org/lonelyorNotes/15453714645346.html</loc>
+  <lastmod>2018-12-21T13:51:04+08:00</lastmod>
+</url>
+
+<url>
+  <loc>www.lonelyor.org/lonelyorNotes/15453713553710.html</loc>
+  <lastmod>2018-12-21T13:49:15+08:00</lastmod>
+</url>
+
+<url>
+  <loc>www.lonelyor.org/lonelyorNotes/15453712257423.html</loc>
+  <lastmod>2018-12-21T13:47:05+08:00</lastmod>
+</url>
+
+<url>
+  <loc>www.lonelyor.org/lonelyorNotes/15453709108643.html</loc>
+  <lastmod>2018-12-21T13:41:50+08:00</lastmod>
+</url>
+
+<url>
+  <loc>www.lonelyor.org/lonelyorNotes/15453707290429.html</loc>
+  <lastmod>2018-12-21T13:38:49+08:00</lastmod>
+</url>
+
+<url>
+  <loc>www.lonelyor.org/lonelyorNotes/15453706658952.html</loc>
+  <lastmod>2018-12-21T13:37:45+08:00</lastmod>
+</url>
+
+<url>
+  <loc>www.lonelyor.org/lonelyorNotes/15453705663839.html</loc>
+  <lastmod>2018-12-21T13:36:06+08:00</lastmod>
+</url>
+
+<url>
+  <loc>www.lonelyor.org/lonelyorNotes/15453704835251.html</loc>
+  <lastmod>2018-12-21T13:34:43+08:00</lastmod>
+</url>
+
+<url>
+  <loc>www.lonelyor.org/lonelyorNotes/15453702906439.html</loc>
+  <lastmod>2018-12-21T13:31:30+08:00</lastmod>
+</url>
+
+<url>
+  <loc>www.lonelyor.org/lonelyorNotes/15453701535252.html</loc>
+  <lastmod>2018-12-21T13:29:13+08:00</lastmod>
+</url>
+
+<url>
+  <loc>www.lonelyor.org/lonelyorNotes/15453699439742.html</loc>
+  <lastmod>2018-12-21T13:25:43+08:00</lastmod>
 </url>
 
 <url>
@@ -181,26 +246,23 @@
 </url>
 
 <url>
-  <loc>www.lonelyor.org/lonelyorNotes/15428708110510.html</loc>
-  <lastmod>2018-11-22T15:13:31+08:00</lastmod>
-</url>
-
-<url>
   <loc>www.lonelyor.org/lonelyorNotes/15428591301433.html</loc>
   <lastmod>2018-11-22T11:58:50+08:00</lastmod>
 </url>
 
 
+
 <url>
-  <loc>www.lonelyor.org/lonelyorNotes/lost.html</loc>
-  <lastmod>2018-12-21T09:44:52+08:00</lastmod>
+  <loc>www.lonelyor.org/lonelyorNotes/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F.html</loc>
 </url>
 
 <url>
-  <loc>www.lonelyor.org/lonelyorNotes/about.html</loc>
-  <lastmod>2018-12-21T09:47:06+08:00</lastmod>
+  <loc>www.lonelyor.org/lonelyorNotes/Linux.html</loc>
 </url>
 
+<url>
+  <loc>www.lonelyor.org/lonelyorNotes/Windows.html</loc>
+</url>
 
 <url>
   <loc>www.lonelyor.org/lonelyorNotes/Web%E6%94%BB%E9%98%B2.html</loc>
@@ -239,23 +301,11 @@
 </url>
 
 <url>
-  <loc>www.lonelyor.org/lonelyorNotes/%E5%A5%87%E6%B7%AB%E5%B7%A7%E6%8A%80.html</loc>
+  <loc>www.lonelyor.org/lonelyorNotes/%E5%BC%80%E5%8F%91.html</loc>
 </url>
 
 <url>
-  <loc>www.lonelyor.org/lonelyorNotes/%E7%B3%BB%E7%BB%9F%E4%BC%98%E5%8C%96%E8%BE%85%E5%8A%A9.html</loc>
-</url>
-
-<url>
-  <loc>www.lonelyor.org/lonelyorNotes/Linux%E6%8A%80%E5%B7%A7.html</loc>
-</url>
-
-<url>
-  <loc>www.lonelyor.org/lonelyorNotes/Windows%E6%8A%80%E5%B7%A7.html</loc>
-</url>
-
-<url>
-  <loc>www.lonelyor.org/lonelyorNotes/%E8%B7%A8%E5%B9%B3%E5%8F%B0.html</loc>
+  <loc>www.lonelyor.org/lonelyorNotes/Python.html</loc>
 </url>
 
 <url>
