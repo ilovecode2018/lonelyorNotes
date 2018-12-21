@@ -90,7 +90,7 @@
         
             <li><a href="%E5%A5%87%E6%B7%AB%E5%B7%A7%E6%8A%80.html">奇淫巧技</a></li>
         
-            <li><a href="%E7%B3%BB%E7%BB%9F%E6%94%BB%E9%98%B2.html">系统攻防</a></li>
+            <li><a href="%E7%B3%BB%E7%BB%9F%E4%BC%98%E5%8C%96%E8%BE%85%E5%8A%A9.html">系统优化辅助</a></li>
         
             <li><a href="CTF.html">CTF</a></li>
         
@@ -119,14 +119,36 @@
 		<div class="markdown-body home-categories">
 		
 			<div class="article">
-                <a class="clearlink" href="15449531124166.html">
+                <a class="clearlink" href="15453572892743.html">
                 
-                  <h1>Markdown基础语法</h1>
+                  <h1>Atom设置和取消代理</h1>
                   <div class="a-content">
                       
                       <div class="a-content-text">
                         
-                        	<p>占坑，内容以后写</p>
+                        	<h2 id="toc_0">设置本地上游代理</h2>
+
+<p>apm config set http-proxy socks5:127.0.0.1:1080<br/>
+apm config set https-proxy socks5:127.0.0.1:1080</p>
+
+<h2 id="toc_1">取消SSL</h2>
+
+<p>apm config set strict-ssl false</p>
+
+<h2 id="toc_2">取消代理</h2>
+
+<p>apm config set http-proxy null<br/>
+apm config set https-proxy null</p>
+
+<h2 id="toc_3">查看代理设置</h2>
+
+<p>apm config get http-proxy<br/>
+apm config get https-proxy</p>
+
+<p>编辑～/.atom/.apmrc文件，配置为：<br/>
+strict-ssl=false<br/>
+http_proxy = socks5: 127.0.0.1:1080<br/>
+https_proxy = socks5: 127.0.0.1:1080</p>
 
                         
                       </div>
@@ -135,10 +157,10 @@
                 <div class="read-more clearfix">
                   <div class="more-left left">
                   
-                    <span class="date">2018/12/16 17:38 下午</span>
+                    <span class="date">2018/12/21 9:54 上午</span>
                     <span>posted in&nbsp;</span> 
           				  
-          					    <span class="posted-in"><a href='%E6%8A%80%E5%B7%A7.html'>技巧</a></span>
+          					    <span class="posted-in"><a href='%E8%B7%A8%E5%B9%B3%E5%8F%B0.html'>跨平台</a></span>
           				   
                   </div>
                   <div class="more-right right">
@@ -210,7 +232,7 @@
         
             <a href="%E5%A5%87%E6%B7%AB%E5%B7%A7%E6%8A%80.html"><strong>奇淫巧技</strong></a>
         
-            <a href="%E7%B3%BB%E7%BB%9F%E6%94%BB%E9%98%B2.html"><strong>系统攻防</strong></a>
+            <a href="%E7%B3%BB%E7%BB%9F%E4%BC%98%E5%8C%96%E8%BE%85%E5%8A%A9.html"><strong>系统优化辅助</strong></a>
         
             <a href="CTF.html"><strong>CTF</strong></a>
         
@@ -233,6 +255,12 @@
 	      
 		      
 			      <li class="post">
+			        <a href="15453574952135.html">crontab设置定时任务</a>
+			      </li>
+		     
+		  
+		      
+			      <li class="post">
 			        <a href="15453572892743.html">Atom设置和取消代理</a>
 			      </li>
 		     
@@ -252,12 +280,6 @@
 		      
 			      <li class="post">
 			        <a href="15446978130922.html">enigmagroup入门挑战-基础1</a>
-			      </li>
-		     
-		  
-		      
-			      <li class="post">
-			        <a href="15446974404003.html">wsgidav独立服务器使用手册</a>
 			      </li>
 		     
 		  
