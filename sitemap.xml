@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
   <loc>www.lonelyor.org/lonelyorNotes/</loc>
-  <lastmod>2018-12-21T14:35:37+08:00</lastmod>
+  <lastmod>2018-12-21T14:39:23+08:00</lastmod>
 </url>
 
 <url>
@@ -66,6 +66,11 @@
 </url>
 
 <url>
+  <loc>www.lonelyor.org/lonelyorNotes/15453702115650.html</loc>
+  <lastmod>2018-12-21T13:30:11+08:00</lastmod>
+</url>
+
+<url>
   <loc>www.lonelyor.org/lonelyorNotes/15453701535252.html</loc>
   <lastmod>2018-12-21T13:29:13+08:00</lastmod>
 </url>
@@ -73,6 +78,11 @@
 <url>
   <loc>www.lonelyor.org/lonelyorNotes/15453699439742.html</loc>
   <lastmod>2018-12-21T13:25:43+08:00</lastmod>
+</url>
+
+<url>
+  <loc>www.lonelyor.org/lonelyorNotes/15453600721143.html</loc>
+  <lastmod>2018-12-21T10:41:12+08:00</lastmod>
 </url>
 
 <url>
@@ -246,23 +256,26 @@
 </url>
 
 <url>
+  <loc>www.lonelyor.org/lonelyorNotes/15428708110510.html</loc>
+  <lastmod>2018-11-22T15:13:31+08:00</lastmod>
+</url>
+
+<url>
   <loc>www.lonelyor.org/lonelyorNotes/15428591301433.html</loc>
   <lastmod>2018-11-22T11:58:50+08:00</lastmod>
 </url>
 
 
-
 <url>
-  <loc>www.lonelyor.org/lonelyorNotes/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F.html</loc>
+  <loc>www.lonelyor.org/lonelyorNotes/lost.html</loc>
+  <lastmod>2018-12-21T14:37:59+08:00</lastmod>
 </url>
 
 <url>
-  <loc>www.lonelyor.org/lonelyorNotes/Linux.html</loc>
+  <loc>www.lonelyor.org/lonelyorNotes/about.html</loc>
+  <lastmod>2018-12-21T14:35:05+08:00</lastmod>
 </url>
 
-<url>
-  <loc>www.lonelyor.org/lonelyorNotes/Windows.html</loc>
-</url>
 
 <url>
   <loc>www.lonelyor.org/lonelyorNotes/Web%E6%94%BB%E9%98%B2.html</loc>
@@ -298,6 +311,22 @@
 
 <url>
   <loc>www.lonelyor.org/lonelyorNotes/%E8%BD%AC%E8%BD%BD.html</loc>
+</url>
+
+<url>
+  <loc>www.lonelyor.org/lonelyorNotes/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F.html</loc>
+</url>
+
+<url>
+  <loc>www.lonelyor.org/lonelyorNotes/Linux.html</loc>
+</url>
+
+<url>
+  <loc>www.lonelyor.org/lonelyorNotes/Windows.html</loc>
+</url>
+
+<url>
+  <loc>www.lonelyor.org/lonelyorNotes/%E5%A5%87%E6%B7%AB%E5%B7%A7%E6%8A%80.html</loc>
 </url>
 
 <url>

@@ -86,9 +86,11 @@
     <li><label>Categories</label></li>
 
         
+            <li><a href="Web%E6%94%BB%E9%98%B2.html">Web攻防</a></li>
+        
             <li><a href="%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F.html">操作系统</a></li>
         
-            <li><a href="Web%E6%94%BB%E9%98%B2.html">Web攻防</a></li>
+            <li><a href="%E5%A5%87%E6%B7%AB%E5%B7%A7%E6%8A%80.html">奇淫巧技</a></li>
         
             <li><a href="%E5%BC%80%E5%8F%91.html">开发</a></li>
         
@@ -119,44 +121,19 @@
 		<div class="markdown-body home-categories">
 		
 			<div class="article">
-                <a class="clearlink" href="15428715286450.html">
+                <a class="clearlink" href="15433875205785.html">
                 
-                  <h1>windows右键添加管理员获得所有权</h1>
+                  <h1>BASIC INJECTION 基本注入</h1>
                   <div class="a-content">
                       
                       <div class="a-content-text">
                         
-                        	<blockquote>
-<p>右键添加获得管理员所有权是个比较方便的功能。</p>
-</blockquote>
-
-<p>打开记事本或者别的文本编辑器，然后写入如下内容:</p>
-
-<pre class="line-numbers"><code class="language-cmd">Windows Registry Editor Version 5.00
-
-[HKEY_CLASSES_ROOT\*\shell\runas]
-@=&quot;管理员取得所有权&quot;
-&quot;NoWorkingDirectory&quot;=&quot;&quot;
-[HKEY_CLASSES_ROOT\*\shell\runas\command]
-@=&quot;cmd.exe /c takeown /f \&quot;%1\&quot; &amp;&amp; icacls \&quot;%1\&quot; /grant administrators:F&quot;
-&quot;IsolatedCommand&quot;=&quot;cmd.exe /c takeown /f \&quot;%1\&quot; &amp;&amp; icacls \&quot;%1\&quot; /grant administrators:F&quot;
-[HKEY_CLASSES_ROOT\exefile\shell\runas2]
-@=&quot;管理员取得所有权&quot;
-&quot;NoWorkingDirectory&quot;=&quot;&quot;
-[HKEY_CLASSES_ROOT\exefile\shell\runas2\command]
-@=&quot;cmd.exe /c takeown /f \&quot;%1\&quot; &amp;&amp; icacls \&quot;%1\&quot; /grant administrators:F&quot;
-&quot;IsolatedCommand&quot;=&quot;cmd.exe /c takeown /f \&quot;%1\&quot; &amp;&amp; icacls \&quot;%1\&quot; /grant administrators:F&quot;
-[HKEY_CLASSES_ROOT\Directory\shell\runas]
-@=&quot;管理员取得所有权&quot;
-&quot;NoWorkingDirectory&quot;=&quot;&quot;
-[HKEY_CLASSES_ROOT\Directory\shell\runas\command]
-@=&quot;cmd.exe /c takeown /f \&quot;%1\&quot; /r /d y &amp;&amp; icacls \&quot;%1\&quot; /grant administrators:F /t&quot;
-&quot;IsolatedCommand&quot;=&quot;cmd.exe /c takeown /f \&quot;%1\&quot; /r /d y &amp;&amp; icacls \&quot;%1\&quot; /grant administrators:F /t&quot;
-</code></pre>
-
-<p>然后另存为：管理员获得所有权.reg<br/>
-文件名可以随便写，但是后缀记得写成reg（改成这个后缀后文件图标就会变成一个破碎蓝色魔方）。<br/>
-然后右键以管理员身份运行，若弹框注册表xxx的，同意就行了。</p>
+                        	<p>题目：<a href="https://ctflearn.com/problems/88">https://ctflearn.com/problems/88</a><br/>
+解：<br/>
+访问题目中提到的：<a href="https://web.ctflearn.com/web4/">域名</a><br/>
+<img src="http://images.lonelyor.org/ctflearn-basic-injection-1.png" alt="ctflearn-basic-injection-1"/><br/>
+然后输入payload，得到以下数据，方框中的即为flag。<br/>
+<img src="http://images.lonelyor.org/ctflearn-basic-injection-2.png" alt="ctflearn-basic-injection-2"/></p>
 
                         
                       </div>
@@ -165,10 +142,10 @@
                 <div class="read-more clearfix">
                   <div class="more-left left">
                   
-                    <span class="date">2018/11/22 15:25 下午</span>
+                    <span class="date">2018/11/28 14:45 下午</span>
                     <span>posted in&nbsp;</span> 
           				  
-          					    <span class="posted-in"><a href='Windows.html'>Windows</a></span>
+          					    <span class="posted-in"><a href='ctflearn.html'>ctflearn</a></span>
           				   
                   </div>
                   <div class="more-right right">
@@ -236,9 +213,11 @@
 
       	<p class="cat-list">
         
+            <a href="Web%E6%94%BB%E9%98%B2.html"><strong>Web攻防</strong></a>
+        
             <a href="%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F.html"><strong>操作系统</strong></a>
         
-            <a href="Web%E6%94%BB%E9%98%B2.html"><strong>Web攻防</strong></a>
+            <a href="%E5%A5%87%E6%B7%AB%E5%B7%A7%E6%8A%80.html"><strong>奇淫巧技</strong></a>
         
             <a href="%E5%BC%80%E5%8F%91.html"><strong>开发</strong></a>
         
