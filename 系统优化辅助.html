@@ -126,15 +126,53 @@
                       
                       <div class="a-content-text">
                         
-                        	<p>编辑配置文件，添加以下选项<br/>
-nano ～/.nanorc</p>
+                        	<p>编辑（没有就创建）配置文件<br/>
+nano ～/.nanorc<br/>
+然后添加以下内容</p>
 
-<p>语法高亮<br/>
-include &quot;/usr/share/nano/*.nanorc&quot;</p>
+<pre class="line-numbers"><code class="language-text"># 这里是linux的添加方法，linux中可以使用通配符*
+# 语法高亮
+include &quot;/usr/share/nano/*.nanorc&quot;
+include &quot;/usr/local/share/nano/*.nanorc&quot;
 
-<p>显示行号<br/>
-set linenumbers<br/>
-更多设置以后慢慢看。</p>
+# 显示行号
+set linenumbers
+</code></pre>
+
+<pre class="line-numbers"><code class="language-text"># 这里是macosx的添加方法
+# 语法高亮
+include /usr/local/share/nano/asm.nanorc
+include /usr/local/share/nano/awk.nanorc
+include /usr/local/share/nano/c.nanorc
+include /usr/local/share/nano/cmake.nanorc
+include /usr/local/share/nano/css.nanorc
+include /usr/local/share/nano/debian.nanorc
+include /usr/local/share/nano/fortran.nanorc
+include /usr/local/share/nano/gentoo.nanorc
+include /usr/local/share/nano/groff.nanorc
+include /usr/local/share/nano/html.nanorc
+include /usr/local/share/nano/java.nanorc
+include /usr/local/share/nano/makefile.nanorc
+include /usr/local/share/nano/man.nanorc
+include /usr/local/share/nano/mgp.nanorc
+include /usr/local/share/nano/mutt.nanorc
+include /usr/local/share/nano/nanorc.nanorc
+include /usr/local/share/nano/objc.nanorc
+include /usr/local/share/nano/ocaml.nanorc
+include /usr/local/share/nano/patch.nanorc
+include /usr/local/share/nano/perl.nanorc
+include /usr/local/share/nano/php.nanorc
+include /usr/local/share/nano/pov.nanorc
+include /usr/local/share/nano/python.nanorc
+include /usr/local/share/nano/ruby.nanorc
+include /usr/local/share/nano/sh.nanorc
+include /usr/local/share/nano/tcl.nanorc
+include /usr/local/share/nano/tex.nanorc
+include /usr/local/share/nano/xml.nanorc
+
+# 显示行号
+set linenumbers
+</code></pre>
 
                         
                       </div>
@@ -241,6 +279,12 @@ set linenumbers<br/>
 	      
 		      
 			      <li class="post">
+			        <a href="15453600721143.html">扫描网站备份文件思路</a>
+			      </li>
+		     
+		  
+		      
+			      <li class="post">
 			        <a href="15453579778110.html">nano设置语法高亮</a>
 			      </li>
 		     
@@ -260,12 +304,6 @@ set linenumbers<br/>
 		      
 			      <li class="post">
 			        <a href="15453572892743.html">Atom设置和取消代理</a>
-			      </li>
-		     
-		  
-		      
-			      <li class="post">
-			        <a href="15449531124166.html">Markdown基础语法</a>
 			      </li>
 		     
 		  
